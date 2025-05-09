@@ -3,122 +3,94 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="description"
-			content="wdd231 | BYU idaho wdd131 JS course. WDD 131 - Dynamic Web Fundamentals. In this page you would find information about this course and the author: Felix Flores. Keyword: web fundamentals BYU IDAHO WDD 131"
-		/>
+		<title>wdd231 Felix Flores website</title>
+		<meta name="description" content="" />
 		<meta name="author" content="Felix Flores" />
-		<link rel="stylesheet" type="text/css" href="styles/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="styles/base.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-			rel="stylesheet"
-		/>
-		<title>WDD 231: Web Frontend Development I-Félix Flores</title>
-		<script src="scripts/base.js" defer></script>
+		<link rel="stylesheet" href="styles/normalize.css" />
+		<link rel="stylesheet" href="styles/base.css" />
+		<script src="scripts/base.js" type="text/javascript" defer></script>
+</head>
 	</head>
-	<body class="dark-theme">
-		<header>
-			<section id="title">
+	<body>
+		<header class="header">
+			<div class="profile">
 				<img
-					id="profile"
 					src="images/profile_photo.webp"
-					alt="author_photo"
+					alt="Félix Flores"
+					class="profile-img"
 					loading="lazy"
-					width="250"
-					height="250"
 				/>
-				<h1>Félix Flores</h1>
-			</section>
-			<nav id="nav">
+				<h1 class="name"><span>Felix Flores</span></h1>
+			</div>
+			<nav class="navbar">
 				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Chamber</a></li>
+					<li><a href="#">Final</a></li>
+					<li><a href="https://github.com/flixjavier">GitHub Profile</a></li>
 					<li>
-						<a href="index.html">Home</a>
-					</li>
-					<li>
-						<a href="#">Chamber</a>
-					</li>
-					<li>
-						<a href="https://github.com/flixjavier/wdd231">GitHub Profile</a>
-					</li>
-					<li>
-						<a
-							href="https://www.linkedin.com/in/felixjflores-zamarripa/details/experience/"
-							>Linked In</a
+						<a href="https://www.linkedin.com/in/felixjflores-zamarripa/"
+							>LinkedIn</a
 						>
 					</li>
 				</ul>
 			</nav>
 		</header>
-		<main class="main">
-			<section class="card" id="main-card">
-				<h2>About Me</h2>
-				<p>
-					My name is Félix and I live in the state of Chihuahua in Mexico. I am
-					37 years old and I am proud to have a wonderful family. My wife Lizly
-					and my two daughters Emilia (7 years old) and Helena (4 years old). I
-					am currently working in an agricultural laboratory as a
-					microbiologist. However, I have a great passion for technology and
-					programming.
-				</p>
-				<img id="family" src="images/family.png" alt="Felix Flores Family" />
-				<hr class="styled-hr" />
-				<div class="mexico-info">
-					<figure class="mexico">
-						<img
-							id="mexico-flag"
-							src="images/mexicoflag.png"
-							alt="México Flag"
-						/>
-						<figcaption>Chihuahua, México</figcaption>
-					</figure>
-					<p>
-						Chihuahua, Mexico's largest state, boasts a rich history and diverse
-						landscapes. Once a prosperous mining center, this northern state
-						shares a border with the US and is known for its rugged mountains,
-						vast Chihuahuan Desert, and the vibrant city of Chihuahua, the state
-						capital.
-					</p>
+
+		<main class="main-content">
+			<section class="home-section">
+				<h1>Home</h1>
+				<div class="home-cards">
+					<div class="card course-work">
+						<h2>Course Work</h2>
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+						</ul>
+					</div>
 				</div>
 			</section>
-			<section class="card" id="web-aside">
-				<h2>Web Dev Resources</h2>
-				<aside id="aside">
-					<ul>
-						<li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
+			<section class="location-section">
+				<div class="card location">
+					<h2>Casas Grandes, Chihuahua</h2>
+					<img
+						class="location-img"
+						src="images/casas_grandes.jpg"
+						alt="Casas Grandes, Chihuahua"
+						loading="lazy"
+					/>
+					<p>Galeria de Esferas</p>
+				</div>
+			</section>
 
-						<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
-
-						<li>
-							<a href="https://htmlcheatsheet.com/css/">CSS CheatSheet</a>
-						</li>
-
-						<li>
-							<a
-								href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-tricks"
-								>CSS Flexbox Guide</a
-							>
-						</li>
-
-						<li>
-							<a
-								href="https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-properties"
-								>CSS Grid Guide</a
-							>
-						</li>
-					</ul>
-				</aside>
+			<section class="certificate-section">
+				<h2>Web and Computer Programming Certificate</h2>
+				<div class="filter-buttons">
+					<button>All</button>
+					<button>CSE</button>
+					<button>WDD</button>
+				</div>
+				<div class="course-grid">
+					<div class="course cse">CSE 110</div>
+					<div class="course wdd">WDD 130</div>
+					<div class="course cse">CSE 111</div>
+					<div class="course cse">CSE 210</div>
+					<div class="course wdd">WDD 131</div>
+					<div class="course wdd">WDD 231</div>
+				</div>
 			</section>
 		</main>
-		<footer>
-			<p>&copy; <span id="current-year"></span> 🌎 Félix Flores 🌏 🇲🇽 México</p>
+
+		<footer class="footer">
+			<p id="current-year">📣 Felix Flores 📣 Mexico</p>
 			<p id="lastModified"></p>
+			<img
+				src="images/mexico_flag.svg"
+				alt="Mexico Flag"
+				class="flag"
+				loading="lazy"
+			/>
 		</footer>
 	</body>
 </html>

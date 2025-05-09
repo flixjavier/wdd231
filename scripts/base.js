@@ -28,7 +28,7 @@ const year = document.querySelector("#current-year");
 
 const lastModified = document.querySelector("#lastModified");
 
-year.innerHTML = `<span class="highlight">${today.getFullYear()}</span>`;
+year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Flores | 🇲🇽 Mexico</span>`;
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
 
