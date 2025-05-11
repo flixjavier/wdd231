@@ -8,8 +8,13 @@
 		<meta name="author" content="Felix Flores" />
 		<link rel="stylesheet" href="styles/normalize.css" />
 		<link rel="stylesheet" href="styles/base.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 		<script src="scripts/base.js" type="text/javascript" defer></script>
-</head>
 	</head>
 	<body>
 		<header class="header">
@@ -18,12 +23,19 @@
 					src="images/profile_photo.webp"
 					alt="Félix Flores"
 					class="profile-img"
+					height="200"
+					width="200"
 					loading="lazy"
 				/>
 				<h1 class="name"><span>Felix Flores</span></h1>
 			</div>
+			<button id="hamburger" aria-label="Toggle Menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
 			<nav class="navbar">
-				<ul>
+				<ul id="menu">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="#">Chamber</a></li>
 					<li><a href="#">Final</a></li>
@@ -38,8 +50,8 @@
 		</header>
 
 		<main class="main-content">
+			<h2 class="main-title">Home</h2>
 			<section class="home-section">
-				<h1>Home</h1>
 				<div class="home-cards">
 					<div class="card course-work">
 						<h2>Course Work</h2>
@@ -65,11 +77,13 @@
 			</section>
 
 			<section class="certificate-section">
-				<h2>Web and Computer Programming Certificate</h2>
-				<div class="filter-buttons">
-					<button>All</button>
-					<button>CSE</button>
-					<button>WDD</button>
+				<div class="card">
+					<h2>Web and Computer Programming Certificate</h2>
+					<div class="filter-buttons">
+						<button id="all"><span>All</span></button>
+						<button id="cse"><span>CSE</span></button>
+						<button id="wdd"><span>WDD</span></button>
+					</div>
 				</div>
 				<div class="course-grid">
 					<div class="course cse">CSE 110</div>
@@ -83,14 +97,8 @@
 		</main>
 
 		<footer class="footer">
-			<p id="current-year">📣 Felix Flores 📣 Mexico</p>
+			<p id="current-year"></p>
 			<p id="lastModified"></p>
-			<img
-				src="images/mexico_flag.svg"
-				alt="Mexico Flag"
-				class="flag"
-				loading="lazy"
-			/>
 		</footer>
 	</body>
 </html>
