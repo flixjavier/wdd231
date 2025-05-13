@@ -1,53 +1,3 @@
-
-//Hamburger menu
-/* const hamButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navbar');
-
-hamButton.addEventListener('click', () => {
-	navigation.classList.toggle('open');
-	hamButton.classList.toggle('open');
-  
-}); */
-
-const hamburger = document.querySelector('#hamburger');
-const menu = document.querySelector('#menu');
-
-hamburger.addEventListener('click', () => {
-	menu.classList.toggle('open');
-	hamburger.classList.toggle('open');
-});
-
-
-// use the date object
-const today = new Date();
-
-const options = {
-  day: '2-digit',
-  month: '2-digit',
-  year: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit',
-  hour12: false // 24-hour format
-};
-
-const formattedDate = new Intl.DateTimeFormat('en-US', options).format(today);
-
-const year = document.querySelector("#current-year");
-
-const lastModified = document.querySelector("#lastModified");
-
-year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javier Flores Zamarripa | Mexico</span> <img
-				src="images/mexico_flag.svg"
-				alt="Mexico Flag"
-				class="flag"
-				width="50"
-				height="auto"
-				loading="lazy"
-			/>`;
-
-lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
-
 /* Courses Content */
 const courses = [
     {
@@ -129,3 +79,100 @@ const courses = [
     }
 ]
 
+//Hamburger menu
+
+const hamburger = document.querySelector('#hamburger');
+const menu = document.querySelector('#menu');
+
+hamburger.addEventListener('click', () => {
+	menu.classList.toggle('open');
+	hamburger.classList.toggle('open');
+});
+
+
+// use the date object
+const today = new Date();
+
+const options = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false // 24-hour format
+};
+
+const formattedDate = new Intl.DateTimeFormat('en-US', options).format(today);
+
+const year = document.querySelector("#current-year");
+
+const lastModified = document.querySelector("#lastModified");
+
+year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javier Flores Zamarripa | Mexico</span> <img
+				src="images/mexico_flag.svg"
+				alt="Mexico Flag"
+				class="flag"
+				width="50"
+				height="auto"
+				loading="lazy"
+			/>`;
+
+lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
+
+/* Courses Buttons */
+
+const allCoursesButton = document.querySelector("#all");
+allCoursesButton.addEventListener("click", () => {
+    coursesCardsTemplate(courses);
+});
+
+const cseCoursesButton = document.querySelector("#cse");
+cseCoursesButton.addEventListener("click", () => {
+    const cseCourses = courses.filter(course => course.subject === "CSE");
+    coursesCardsTemplate(cseCourses);
+});
+
+const wddCoursesButton = document.querySelector("#wdd");
+wddCoursesButton.addEventListener("click", () => {
+    const wddCourses = courses.filter(course => course.subject === "WDD");
+    coursesCardsTemplate(wddCourses);
+});
+
+function coursesCardsTemplate(array) {
+    document.querySelector(".course-grid").innerHTML = "";
+    const cardsTemplate = document.querySelector(".course-grid"); 
+    
+    const credits = document.createElement("div");
+    credits.className = "credits";
+    credits.innerHTML = `
+    <div>
+        <p>The total number of credits is: ${array.reduce((total, course) => total + course.credits, 0)}</p>
+    </div>`;
+    cardsTemplate.appendChild(credits);
+
+    array.forEach(course => {
+        const cardTemplate = document.createElement("div");
+        cardTemplate.className = "card-template";
+        cardTemplate.innerHTML = `
+        <div class="wrapper">
+            <p>${course.subject} ${course.number}</p>
+            <p>${course.title}</p>
+            <p>
+                ${course.completed ? "✅ Completed" : "❌ Not Completed"}
+            </p>
+        </div>`;
+        cardsTemplate.appendChild(cardTemplate);
+    });
+};
+
+/* subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: [
+            'Python'
+        ],
+        completed: true */
