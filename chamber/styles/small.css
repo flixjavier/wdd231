@@ -1,0 +1,152 @@
+:root{
+  /* Fonts */
+  --title-font: "Lobster", sans-serif; 
+  --h2-font: "Noto Sans", sans-serif;
+  --main-font: "Roboto", sans-serif;
+  /* Colors */
+  --black: #000000ff;
+  --van-dyke: #4F4444ff;
+  --black-2: #010000ff;
+  --engineering-orange: #D40000ff;
+  --redwood: #9B554Dff;
+  --black-3: #010000ff;
+  --moonstone: #5B9CA0ff;
+  --moonstone-2: #06B1CAff;
+}
+
+
+header{
+  display: grid;
+  grid-template-columns: 44px auto 44px;
+  align-items: end;
+}
+
+header img{
+  border-radius: 50%;
+}
+
+nav {
+  background-color: #154e13;
+}
+
+#myButton::before {
+  content: "\2630";
+  color: #154e13;
+}
+
+#myButton{
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+  padding: .25rem 2vw;
+} 
+
+ul.menuLinks li a{
+  display: block;
+  padding: .75rem 2vw;
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.menuLinks {
+  list-style-type: none;
+}
+
+li.current-menu-item a{
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+ul.menuLinks a:hover {
+    background-color: rgba(225,225, 225, 0.25);
+  }
+
+
+#myButton.open::before {
+  content: "\2612";
+  color: #154e13;
+}
+
+nav{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-in-out;
+  
+}
+
+nav ul{
+  overflow: hidden;
+}
+
+nav.open{
+  grid-template-rows: 1fr;
+}
+
+body{
+  font-family: "Lobster", "Noto Sans", sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.75); /* Add shadow */
+  border: 2px solid #ccc;                   /* Add border */
+  border-radius: 10px;                       /* Optional: rounded corners */
+}
+
+img{
+  border-radius: 5%;
+  box-shadow: 0 4px 16px rgba(0,0,0,1);
+}
+
+header{
+  background-color: var(--main-bg-color);
+  padding: 20px;
+  text-align: center;
+}
+
+h1{
+  color: var(--main-text-color);
+}
+
+h2{
+  color: var(--primary-color);
+  text-align: center;
+}
+
+p{
+  font-family: var(--h2-font);
+  color: var(--main-text-color);
+  line-height: 1.6;
+  text-align: center;
+}
+section{
+  margin: 10px 0;
+  
+  background-color: var(--third-color);
+  border-radius: 5%;
+  padding: 10px;
+}
+
+/* Example grid container */
+#cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center; /* This centers the content (including images) horizontally */
+  align-items: center;    /* This centers the content vertically (optional) */
+}
+
+/* Center images inside grid items */
+#cards img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 340px; /* Set a max width for images */
+  width: 100%;        /* Makes image responsive */
+  height: auto;      /* Maintains aspect ratio */
+}

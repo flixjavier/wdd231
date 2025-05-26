@@ -52,6 +52,7 @@ nav{
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-in-out;
+  
 }
 
 nav ul{
