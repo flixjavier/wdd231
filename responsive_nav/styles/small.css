@@ -62,3 +62,14 @@ nav ul{
 nav.open{
   grid-template-rows: 1fr;
 }
+
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto; 
+  gap: 10px;
+
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  border-radius: 0 0 10px 10px;
+}

@@ -38,8 +38,8 @@ const year = document.querySelector("#current-year");
 const lastModified = document.querySelector("#lastModified");
 
 year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javier Flores Zamarripa | Mexico</span> <img
-				src="images/mexico_flag.svg"
-				alt="Mexico Flag"
+				src="images/logo.svg"
+				alt="Logo"
 				class="flag"
 				width="50"
 				height="auto"
@@ -58,6 +58,7 @@ const cards = document.querySelector('#cards');
  * following properties:
  */
 const displayCompanies = (companies) => {
+  
   companies.forEach(company => {
     const card = document.createElement('section');
     const fullName = document.createElement('h2');
@@ -65,7 +66,8 @@ const displayCompanies = (companies) => {
     const address = document.createElement('p');
     const phone = document.createElement('p');
     const webUrl = document.createElement('a');
-    
+  
+
     fullName.textContent = `${company.name}`;
     portrait.setAttribute('src', company.icon);
     portrait.setAttribute('alt', `logo of ${company.name} ${company.industry}`)
@@ -90,4 +92,22 @@ const displayCompanies = (companies) => {
   
 }
 
+const gridbutton = document.querySelector("#grid");
+const listbutton = document.querySelector("#list");
+const display = document.querySelector("#cards");
+
+// The following code could be written cleaner. How? We may have to simplfiy our HTMl and think about a default view.
+
+gridbutton.addEventListener("click", () => {
+	// example using arrow function
+	display.classList.add("grid");
+	display.classList.remove("list");
+});
+
+listbutton.addEventListener("click", showList); // example using defined function
+
+function showList() {
+	display.classList.add("list");
+	display.classList.remove("grid");
+}
 

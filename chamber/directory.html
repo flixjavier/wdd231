@@ -44,22 +44,31 @@
 	</head>
 	<body>
 		<header>
-			<img src="images/logo.svg" alt="Logo" width="44" height="auto" />
-			<span>Casas Grandes</span>
+			<section>
+				<img src="images/logo.svg" alt="Logo" width="44" height="auto" />
+				<div>
+					<h1>Casas Grandes</h1>
+					<span>Chamber of Commerce</span>
+				</div>
+			</section>
 			<button id="myButton"></button>
+			<nav id="animateme">
+				<ul class="menuLinks">
+					<li><a href="#" title="Home">Home</a></li>
+					<li class="current-menu-item">
+						<a href="#" title="Directory">Directory</a>
+					</li>
+					<li><a href="#" title="Join">Join</a></li>
+					<li><a href="#" title="Discover">Discover</a></li>
+				</ul>
+			</nav>
 		</header>
-		<nav id="animateme">
-			<ul class="menuLinks">
-				<li><a href="#" title="Home">Home</a></li>
-				<li class="current-menu-item">
-					<a href="#" title="Directory">Directory</a>
-				</li>
-				<li><a href="#" title="Join">Join</a></li>
-				<li><a href="#" title="Discover">Discover</a></li>
-			</ul>
-		</nav>
 		<main>
-			<div id="cards"></div>
+			<div class="menu">
+				<button id="grid" data-view="grid">Grid View</button>
+				<button id="list" data-view="list">List View</button>
+			</div>
+			<div id="cards" class="grid"></div>
 		</main>
 		<footer class="footer">
 			<p id="current-year"></p>
