@@ -39,7 +39,7 @@ const lastModified = document.querySelector("#lastModified");
 
 year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javier Flores Zamarripa | Mexico</span> <img
 				src="images/logo.svg"
-				alt="Logo"
+				alt="Company logo"
 				class="flag"
 				width="50"
 				height="auto"
