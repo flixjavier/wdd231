@@ -4,7 +4,7 @@
     "address": "123 Harvest Lane, Oakridge, TX 75901",
     "phone": "(936) 555-0123",
     "website": "https://www.greenvalleyfarms.com",
-    "icon": "images/green_valley_farms.png",
+    "icon": "images/green_valley_farms.webp",
     "membership_level": 3,
     "industry": "Crop Farming",
     "description": "Family-run farm specializing in organic vegetables and seasonal produce."
@@ -14,7 +14,7 @@
     "address": "456 County Road 22, Oakridge, TX 75901",
     "phone": "(936) 555-0199",
     "website": "https://www.oakridgetractors.com",
-    "icon": "images/oakridge_tractor.png",
+    "icon": "images/oakridge_tractor.webp",
     "membership_level": 2,
     "industry": "Agricultural Equipment",
     "description": "Supplier of farm equipment, tools, and repair services."
@@ -24,7 +24,7 @@
     "address": "789 Dairyland Dr, Oakridge, TX 75901",
     "phone": "(936) 555-0147",
     "website": "https://www.sunrisedairyco.com",
-    "icon": "images/sunrise_dairy.png",
+    "icon": "images/sunrise_dairy.webp",
     "membership_level": 1,
     "industry": "Dairy Farming",
     "description": "Local dairy producer offering fresh milk, cheese, and yogurt."
@@ -34,7 +34,7 @@
     "address": "101 Grain Mill Rd, Oakridge, TX 75901",
     "phone": "(936) 555-0135",
     "website": "https://www.oakridgefeed.com",
-    "icon": "images/valley_seed.png",
+    "icon": "images/valley_seed.webp",
     "membership_level": 2,
     "industry": "Animal Feed",
     "description": "Bulk and retail supplier of feed and grain for livestock."
@@ -44,7 +44,7 @@
     "address": "210 Sprinkler Way, Oakridge, TX 75901",
     "phone": "(936) 555-0166",
     "website": "https://www.evergreenirrigation.com",
-    "icon": "images/oakridge_tractor.png",
+    "icon": "images/oakridge_tractor.webp",
     "membership_level": 3,
     "industry": "Irrigation Systems",
     "description": "Design and installation of water-efficient irrigation systems for farms."
@@ -54,7 +54,7 @@
     "address": "314 Main Street, Oakridge, TX 75901",
     "phone": "(936) 555-0111",
     "website": "https://www.oakridgefarmerscoop.com",
-    "icon": "images/green_valley_farms.png",
+    "icon": "images/green_valley_farms.webp",
     "membership_level": 1,
     "industry": "Retail",
     "description": "Community-owned market selling local produce, meat, and handmade goods."
@@ -64,7 +64,7 @@
     "address": "400 Policy Ave, Oakridge, TX 75901",
     "phone": "(936) 555-0177",
     "website": "https://www.harvestinsurance.com",
-    "icon": "images/valley_seed.png",
+    "icon": "images/valley_seed.webp",
     "membership_level": 2,
     "industry": "Insurance",
     "description": "Specialized insurance services for farms and agricultural businesses."

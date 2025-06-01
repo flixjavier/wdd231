@@ -42,9 +42,9 @@ year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javi
 				alt="Company logo"
 				class="flag"
 				width="50"
-				height="auto"
-				loading="lazy"
+				height="50"
 			/>`;
+      /* can add loading="Lazy" */
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
 
@@ -70,10 +70,10 @@ const displayCompanies = (companies) => {
 
     fullName.textContent = `${company.name}`;
     portrait.setAttribute('src', company.icon);
-    portrait.setAttribute('alt', `logo of ${company.name} ${company.industry}`)
-    portrait.setAttribute('loading', 'lazy');
+    portrait.setAttribute('alt', `logo of ${company.name} ${company.industry}`);
     portrait.setAttribute('width', '300');
-    portrait.setAttribute('height', 'auto');
+    portrait.setAttribute('height', '300');
+    portrait.setAttribute('loading', 'lazy');
     address.textContent = `Adress: ${company.address}`;
     phone.textContent = `Phone: ${company.phone}`;
     webUrl.textContent = `${company.website}`;
