@@ -5,7 +5,7 @@
     margin: 0 auto;
     font-family: "Lobster", "Noto Sans", sans-serif;  
   }
-  header{
+  header{ 
     border-radius: 10px 10px 0 0;
   }
 
@@ -29,4 +29,8 @@
   nav{
     grid-template-rows: 1fr;
   }
+
+  nav ul {
+  overflow: visible;
+}
 }
