@@ -1,3 +1,4 @@
+const currentPage = window.location.pathname.split("/").pop();
 //html elements
 const myTown = document.querySelector('#town');
 const myDescription = document.querySelector('#description');
@@ -17,6 +18,7 @@ const myUnits = "metric"; // Units for temperature (metric, imperial, or standar
 //call whether API
 const url = `//api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&appid=${myAPI}&units=${myUnits}`;
 
+//const url = `api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&appid=${myAPI}`
 
 async function apiFetch(){
   try {
@@ -25,9 +27,11 @@ async function apiFetch(){
       throw Error(await response.text());
     }
     else if (response.ok) {
-    const data = await response.json();
+      const data = await response.json();
+      console.log(data);
+
     //console.log("Hello from the Weather API");
-    displayResults(data);
+      displayResults(data);
     }
     else {
       throw Error(await response.text());
@@ -39,7 +43,7 @@ async function apiFetch(){
 }
 
 function displayResults(data) {
-  console.log(data);
+  //console.log(data);
   myTown.innerHTML = data.name;
   myDescription.innerHTML = data.weather[0].description;
   myTemperature.innerHTML = `<strong> Temp: ${data.main.temp.toFixed(1)} &deg;C</strong>`; 
@@ -53,7 +57,12 @@ function displayResults(data) {
   myGraphic.setAttribute('loading', 'lazy');
   myForecast.innerHTML = `Today: <strong>90°F</strong><br />Wednesday: <strong>89°F</strong
 						><br />Thursday: <strong>68°F</strong>`
+  
 } 
 // End of Weather API
+
+function displayForecast(){
+
+}
 
 export {apiFetch};

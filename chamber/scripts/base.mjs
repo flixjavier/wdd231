@@ -1,7 +1,7 @@
 import { apiFetch } from './weather_API.mjs';
+import { getData } from './getData.mjs';
 
 const currentPage = window.location.pathname.split("/").pop();
-
 const hamburgerElement = document.querySelector("#myButton");
 const navElement = document.querySelector("#animateme");
 
@@ -11,16 +11,7 @@ hamburgerElement.addEventListener("click", () => {
 });
 
 const jsonFile = "data/members.json";
-
-async function getData() {
-  const response = await fetch(jsonFile);
-  const data = await response.json();
-  //console.table(data.companies); // temporary testing of data response
-  displayCompanies(data.companies);
-}
-
-getData();
-
+getData(jsonFile);
 
 // use the date object
 const today = new Date();
@@ -68,68 +59,11 @@ year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Cla
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
 
-const cards = document.querySelector('#cards');
-
-/**
- * The function `displayCompanies` creates HTML elements for each companie in the input array and appends
- * them to a parent element.
- * @param companies - An array of objects representing companies of the city, where each object contains the
- * following properties:
- */
-const displayCompanies = (companies) => {
-  
-  companies.forEach(company => {
-    const card = document.createElement('section');
-    const fullName = document.createElement('h2');
-    const portrait = document.createElement('img');
-    const address = document.createElement('p');
-    const phone = document.createElement('p');
-    const webUrl = document.createElement('a');
-  
-
-    fullName.textContent = `${company.name}`;
-    portrait.setAttribute('src', company.icon);
-    portrait.setAttribute('alt', `logo of ${company.name} ${company.industry}`);
-    portrait.setAttribute('width', '300');
-    portrait.setAttribute('height', '300');
-    portrait.setAttribute('loading', 'lazy');
-    address.textContent = `Adress: ${company.address}`;
-    phone.textContent = `Phone: ${company.phone}`;
-    webUrl.textContent = `${company.website}`;
-    webUrl.setAttribute('href', company.webUrl);
-    webUrl.setAttribute('target', '_blank');
-    
-    card.appendChild(portrait);
-    card.appendChild(fullName);
-    card.appendChild(address);
-    card.appendChild(phone);
-    card.appendChild(webUrl);
-    cards.appendChild(card);
-  });
-
-  
-}
-
-const gridbutton = document.querySelector("#grid");
-const listbutton = document.querySelector("#list");
-const display = document.querySelector("#cards");
-
-// Event listeners for grid and list buttons
-if (currentPage === "directory.html") {
-gridbutton.addEventListener("click", () => {
-	// example using arrow function
-	display.classList.add("grid");
-	display.classList.remove("list");
-});
-
-listbutton.addEventListener("click", showList); // example using defined function
-
-function showList() {
-	display.classList.add("list");
-	display.classList.remove("grid");
-}
-}
-
 // Weather API
 apiFetch(); // Call the function to fetch and display weather data
+
+//sportlight: 
+
+const spotlight = document.querySelector('#spotlight');
+
 
