@@ -41,7 +41,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="icon" href="images/casas_grandes_icon.ico" type="image/x-icon" />
-		<script src="scripts/base.js" type="text/javascript" defer></script>
+		<script src="scripts/base.mjs" type="module" defer></script>
 	</head>
 	<body>
 		<header>
@@ -80,51 +80,21 @@
 
 			<section class="info-panels">
 				<div class="panel events">
-					<h3>Events</h3>
-					<p>Upcoming events will be displayed here.</p>
+					<h3></h3>
+					<p></p>
 				</div>
-				<div class="panel current-weather">
-					<h3>Current Weather</h3>
-					<p>
-						75°F<br />Partly Cloudy<br />High: 85° Low: 52°<br />Humidity:
-						34%<br />Sunrise: 7:30am<br />Sunset: 9:59pm
-					</p>
+				<div class="card panel">
+					<h3 id="town"></h3>
+					<img id="graphic" src="" alt="" />
+					<p id="description"></p>
+					<p id="temperature"></p>
 				</div>
 				<div class="panel weather-forecast">
 					<h3>Weather Forecast</h3>
-					<p>
-						Today: <strong>90°F</strong><br />Wednesday: <strong>89°F</strong
-						><br />Thursday: <strong>68°F</strong>
-					</p>
+					<p id="forecast"></p>
 				</div>
 			</section>
-
-			<section class="business-cards">
-				<div class="business-card">
-					<img src="images/business1.jpg" alt="Business Logo" />
-					<h4>Business Name</h4>
-					<p class="tagline">Business Tag Line</p>
-					<p><strong>Email:</strong> info@gmail.com</p>
-					<p><strong>Phone:</strong> 800-555-1234</p>
-					<p><strong>URL:</strong> mybusiness.com</p>
-				</div>
-				<div class="business-card">
-					<img src="images/business2.jpg" alt="Business Logo" />
-					<h4>Business Name</h4>
-					<p class="tagline">Business Tag Line</p>
-					<p><strong>Email:</strong> info@gmail.com</p>
-					<p><strong>Phone:</strong> 800-555-1234</p>
-					<p><strong>URL:</strong> mybusiness.com</p>
-				</div>
-				<div class="business-card">
-					<img src="images/business3.jpg" alt="Business Logo" />
-					<h4>Business Name</h4>
-					<p class="tagline">Business Tag Line</p>
-					<p><strong>Email:</strong> info@gmail.com</p>
-					<p><strong>Phone:</strong> 800-555-1234</p>
-					<p><strong>URL:</strong> mybusiness.com</p>
-				</div>
-			</section>
+			<div id="cards" class="grid"></div>
 		</main>
 		<footer class="footer">
 			<section class="footer-info"></section>

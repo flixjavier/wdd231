@@ -1,3 +1,7 @@
+import { apiFetch } from './weather_API.mjs';
+
+const currentPage = window.location.pathname.split("/").pop();
+
 const hamburgerElement = document.querySelector("#myButton");
 const navElement = document.querySelector("#animateme");
 
@@ -114,8 +118,9 @@ const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
 const display = document.querySelector("#cards");
 
-// The following code could be written cleaner. How? We may have to simplfiy our HTMl and think about a default view.
 
+// Event listeners for grid and list buttons
+if (currentPage === "directory.html") {
 gridbutton.addEventListener("click", () => {
 	// example using arrow function
 	display.classList.add("grid");
@@ -128,4 +133,8 @@ function showList() {
 	display.classList.add("list");
 	display.classList.remove("grid");
 }
+}
+
+// Weather API
+apiFetch(); // Call the function to fetch and display weather data
 
