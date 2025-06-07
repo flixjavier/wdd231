@@ -2,6 +2,9 @@
 const myTown = document.querySelector('#town');
 const myDescription = document.querySelector('#description');
 const myTemperature = document.querySelector('#temperature');
+const myHumidity = document.querySelector('#humidity');
+const mySunrise = document.querySelector('#sunrise');
+const mySunset = document.querySelector('#sunset');
 const myGraphic = document.querySelector('#graphic');
 
 const myForecast = document.querySelector('#forecast');
@@ -39,7 +42,10 @@ function displayResults(data) {
   console.log(data);
   myTown.innerHTML = data.name;
   myDescription.innerHTML = data.weather[0].description;
-  myTemperature.innerHTML = `<strong>${data.main.temp.toFixed(1)} &deg;C</strong>`; 
+  myTemperature.innerHTML = `<strong> Temp: ${data.main.temp.toFixed(1)} &deg;C</strong>`; 
+  myHumidity.innerHTML = `Humidity: ${data.main.humidity}%`;
+  mySunrise.innerHTML = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+  mySunset.innerHTML = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
   const iconSrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 
   myGraphic.setAttribute('src', iconSrc);

@@ -322,14 +322,14 @@ footer.footer {
 .card #description{
   text-transform: capitalize;
   color: var(--black-2);
-  font-size: 1.2em;
-  margin: .3rem 0;
+  font-size: 1rem;
+  margin: 0rem 0;
 }
 
-.card #temperature{
+.card #temperature, #humidity, #sunrise, #sunset{
   color: var(--black-3);
-  font-size: 2rem;
-  margin: .3rem 0;
+  font-size: 0.7rem;
+  margin: 0rem 0;
 }
 
 .card #graphic{
