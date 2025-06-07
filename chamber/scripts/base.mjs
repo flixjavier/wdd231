@@ -43,18 +43,18 @@ const lastModified = document.querySelector("#lastModified");
 
 const footerInfo = document.querySelector(".footer-info");
 
+const socialIcons = document.querySelector(".social-icons");
+
 footerInfo.innerHTML = `<address>
 					<strong>Casas Grandes Chamber of Commerce</strong><br />
 					123 Main Street<br />
 					Casas Grandes, CHH 12345<br />
 					info@casasgrandescc.org<br />
 					(636) 555-2300
-				</address>
-				<div class="social-icons">
-					<img src="images/youtube.svg" alt="YouTube" />
-					<img src="images/X_twitter.svg" alt="Twitter" />
-					<img src="images/linkedin.svg" alt="LinkedIn" />
-				</div>`
+				</address>`
+
+socialIcons.innerHTML = `<img src="images/youtube.svg" alt="YouTube" /><img src="images/X_twitter.svg" alt="Twitter" /><img src="images/linkedin.svg" alt="LinkedIn" />`
+	
 
 year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Class Project |
 				Felix Flores<br /> Casas Grandes Chamber of Commerce<br /></span> <img
@@ -68,10 +68,7 @@ year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Cla
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
 
-
-
 const cards = document.querySelector('#cards');
-
 
 /**
  * The function `displayCompanies` creates HTML elements for each companie in the input array and appends
@@ -102,7 +99,6 @@ const displayCompanies = (companies) => {
     webUrl.setAttribute('href', company.webUrl);
     webUrl.setAttribute('target', '_blank');
     
-
     card.appendChild(portrait);
     card.appendChild(fullName);
     card.appendChild(address);
@@ -117,7 +113,6 @@ const displayCompanies = (companies) => {
 const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
 const display = document.querySelector("#cards");
-
 
 // Event listeners for grid and list buttons
 if (currentPage === "directory.html") {
