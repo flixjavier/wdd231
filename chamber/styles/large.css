@@ -32,5 +32,47 @@
 
   nav ul {
   overflow: visible;
-}
+  }
+
+  footer.footer {
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem 2rem;
+  }
+
+  .footer-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .footer-info address {
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  /*Remove grid styles for #current-year and #lastModified if present */
+  #current-year,
+  #lastModified {
+    text-align: right;
+    display: block;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0;
+  }
+
+  .footer-right img {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+  }
 }

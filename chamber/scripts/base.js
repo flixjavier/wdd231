@@ -37,7 +37,23 @@ const year = document.querySelector("#current-year");
 
 const lastModified = document.querySelector("#lastModified");
 
-year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javier Flores Zamarripa | Mexico</span> <img
+const footerInfo = document.querySelector(".footer-info");
+
+footerInfo.innerHTML = `<address>
+					<strong>Casas Grandes Chamber of Commerce</strong><br />
+					123 Main Street<br />
+					Casas Grandes, CHH 12345<br />
+					info@casasgrandescc.org<br />
+					(636) 555-2300
+				</address>
+				<div class="social-icons">
+					<img src="images/youtube.svg" alt="YouTube" />
+					<img src="images/X_twitter.svg" alt="Twitter" />
+					<img src="images/linkedin.svg" alt="LinkedIn" />
+				</div>`
+
+year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Class Project |
+				Felix Flores<br /> Casas Grandes Chamber of Commerce<br /></span> <img
 				src="images/logo.svg"
 				alt="Company logo"
 				class="flag"
@@ -47,6 +63,8 @@ year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} Felix Javi
       /* can add loading="Lazy" */
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
+
+
 
 const cards = document.querySelector('#cards');
 
