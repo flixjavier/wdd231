@@ -16,31 +16,64 @@ const myLon = "-107.95511200001594"; // Longitude for the location
 const myUnits = "metric"; // Units for temperature (metric, imperial, or standard)
 
 //call whether API
-const url = `//api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&appid=${myAPI}&units=${myUnits}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&appid=${myAPI}&units=${myUnits}`;
 
-//const url = `api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&appid=${myAPI}`
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&appid=${myAPI}&units=${myUnits}`
 
 async function apiFetch(){
   try {
     const response = await fetch(url);
-    if (!response.ok) {
-      throw Error(await response.text());
+    const forecastResponse = await fetch(forecastUrl)
+    if (!response.ok || !forecastResponse.ok){
+      throw Error(await response.text() || await forecastResponse.text());
     }
     else if (response.ok) {
       const data = await response.json();
-      console.log(data);
+      const forecastData = await forecastResponse.json();
+      /* console.log(forecastData);
+      console.log(data); */
 
     //console.log("Hello from the Weather API");
       displayResults(data);
+      displayForecast(forecastData);
     }
     else {
-      throw Error(await response.text());
+      throw Error(await response.text()||await forecastResponse.text());
     }
   }
   catch (error) {
     console.log(error);
   }
 }
+
+function getDayNames() {
+  const today = new Date();
+  const options = { weekday: 'long' };
+
+  const dayNames = [];
+  for (let i = 0; i < 3; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + i);
+    dayNames.push(date.toLocaleDateString('en-US', options));
+  }
+  return dayNames; // [today, tomorrow, day after]
+}
+
+// Example usage:
+const [todayName, tomorrowName, dayAfterName] = getDayNames();
+//console.log(todayName, tomorrowName, dayAfterName);
+
+// Display the day names
+function displayForecast(data) {
+  console.log(data);
+  const [todayName, tomorrowName, dayAfterName] = getDayNames();
+  myForecast.innerHTML = `
+    ${todayName}: <strong>${data.list[0].main.temp.toFixed(1)} &deg;C</strong><br />
+    ${tomorrowName}: <strong>${data.list[1].main.temp.toFixed(1)} &deg;C</strong><br />
+    ${dayAfterName}: <strong>${data.list[2].main.temp.toFixed(1)} &deg;C</strong>
+  `;
+}
+
 
 function displayResults(data) {
   //console.log(data);
@@ -60,9 +93,5 @@ function displayResults(data) {
   
 } 
 // End of Weather API
-
-function displayForecast(){
-
-}
 
 export {apiFetch};

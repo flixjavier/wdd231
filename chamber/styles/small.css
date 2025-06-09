@@ -242,6 +242,20 @@ a {
   background-color: rgba(91, 156, 160, 0.3);
 }
 
+.weather-forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;       
+  height: auto;           
+}
+
+.weather-forecast p {
+  font-size: 1.3rem;
+  margin: 0;
+  text-align: center;
+}
+
 .highlight {
   font-weight: 700;
   color: var(--black);
