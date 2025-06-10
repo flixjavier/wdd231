@@ -20,5 +20,6 @@
   },
   "peacock.color": "#007fff",
   "liveServer.settings.port": 5501,
-  "html.autoClosingTags": false
+  "html.autoClosingTags": false,
+  "html.format.enable": false
 }
