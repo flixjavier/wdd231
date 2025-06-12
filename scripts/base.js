@@ -124,7 +124,7 @@ lastModified.innerHTML = `<span class="highlight">Last modification: ${formatted
 
 const allCoursesButton = document.querySelector("#all");
 allCoursesButton.addEventListener("click", () => {
-    coursesCardsTemplate(courses);
+    allCoursescardsTemplate(courses);
 });
 
 const cseCoursesButton = document.querySelector("#cse");
@@ -138,6 +138,23 @@ wddCoursesButton.addEventListener("click", () => {
     const wddCourses = courses.filter(course => course.subject === "WDD");
     coursesCardsTemplate(wddCourses);
 });
+
+function allCoursescardsTemplate(array) {
+    const container = document.querySelector(".course-grid");
+    container.innerHTML = ""; // Clear previous content
+
+    array.forEach(course => {
+        const btn = document.createElement("button");
+        btn.innerHTML = `<span>${course.subject} ${course.number}</span>`;
+        btn.className = "course-title-btn";
+        // You can add an event listener here later if needed
+        container.appendChild(btn);
+        btn.addEventListener("click", () => {
+            displayCourseDetails(course);
+        });
+    });
+
+}
 
 function coursesCardsTemplate(array) {
     document.querySelector(".course-grid").innerHTML = "";
@@ -165,3 +182,22 @@ function coursesCardsTemplate(array) {
         cardsTemplate.appendChild(cardTemplate);
     });
 };
+
+function displayCourseDetails(course) {
+    const courseDetails = document.querySelector("#course-details");
+    courseDetails.innerHTML = ``;  
+    courseDetails.innerHTML = `
+    <button id="closeModal"">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits:</strong> ${course.credits}</p>
+    <p><strong>Certificate:</strong> ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>`;
+    courseDetails.showModal();
+    const closeModal = document.querySelector("#closeModal");
+    closeModal.addEventListener("click", () => {   
+        courseDetails.close();
+    }
+    );
+}

@@ -200,6 +200,80 @@ nav a:hover{
   margin-bottom: 30px;
 }
 
+
+.course-grid button {
+  background: #fff;
+  border-radius: 10%;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(-21deg);
+}
+
+.course-grid button span {
+  display: inline-block;
+  transform: skew(21deg);
+}
+
+.course-grid button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.course-grid button:hover {
+  color: #fff;
+}
+
+.course-grid button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+dialog{
+  border: 1px solid var(--primary-color);
+  border-radius: .25rem;
+  padding: 1rem;
+  background-color: var(--main-bg-color);
+  box-shadow: 0 0 3rem var(--primary-color);
+  width: 90%;
+  max-width: 600px;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 50%);
+}
+
+dialog button {
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+}
+
 footer{
   display: grid;
   grid-template-columns: 1fr 1fr;
