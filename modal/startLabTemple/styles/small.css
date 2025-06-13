@@ -1,0 +1,47 @@
+*{box-sizing: border-box;}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3rem #777;
+  width: 100%;
+}
+
+#mydialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem #aaa;
+  padding: 20px;
+  z-index: 1000;
+}
+
+#mydialog div{
+  display: grid;
+  grid-template-columns: auto 44px;
+  background-color: #ddd;
+  padding: 5px;
+  border-bottom: #aaa solid 1px;
+  border-radius: 5px;
+}
+
+#mydialog h2{
+  margin: 0;
+  color: #275690;
+}
+
+#mydialog button {
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 1px 0 #aaa;
+}
+
+#mydialog button:hover {
+  background-color: bisque;
+}
+
