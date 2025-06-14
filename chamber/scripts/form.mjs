@@ -1,24 +1,94 @@
-/* 
-const getString = window.location.search;
+// Membership level data
+const membershipData = [
+    {
+        level: "NP",
+        title: "NP Membership",
+        price: "No Cost",
+        benefits: [
+            "For non-profit organizations",
+            "Basic listing in our directory",
+            "Access to monthly newsletters",
+            "Invitations to community events",
+            "Social media mentions"
+        ]
+    },
+    {
+        level: "Bronze",
+        title: "Bronze Membership",
+        price: "$200/year",
+        benefits: [
+            "All NP benefits plus:",
+            "Business listing in our online directory",
+            "Access to business workshops",
+            "Networking events (4 per year)",
+            "Discounts on chamber events",
+            "Quarterly business consultations"
+        ]
+    },
+    {
+        level: "Silver",
+        title: "Silver Membership",
+        price: "$400/year",
+        benefits: [
+            "All Bronze benefits plus:",
+            "Featured listing in our directory",
+            "Priority access to workshops",
+            "Networking events (8 per year)",
+            "Free admission to 2 annual events",
+            "Business spotlight in newsletter",
+            "Access to premium resources"
+        ]
+    },
+    {
+        level: "Gold",
+        title: "Gold Membership",
+        price: "$800/year",
+        benefits: [
+            "All Silver benefits plus:",
+            "Premium featured listing",
+            "VIP access to all events",
+            "Business mentorship program",
+            "Free advertising in newsletter",
+            "Annual business award eligibility",
+            "Exclusive networking opportunities",
+            "Priority referrals from chamber"
+        ]
+    }
+];
 
-console.log(getString);
+const showHere = document.querySelector("#showHere");
+const mydialog = document.querySelector("#mydialog");
+const mytitle = document.querySelector("#mydialog h2");
+const myclose = document.querySelector("#mydialog button");
+const myinfo = document.querySelector("#mydialog p");
 
-const myInfo = new URLSearchParams(getString);
-
-console.log(myInfo);
-console.log(myInfo.get("timestamp"));
-
-const form = document.querySelector("form");
-form.addEventListener("submit", function() {
-  document.getElementById("timestamp").value = Date.now();
+//event listener for the dialog close button
+myclose.addEventListener("click", () => {
+    mydialog.close();
 });
 
-console.log(document.getElementById("timestamp")); // Should not be null
-document.querySelector("#results").innerHTML = `
-<p>Appointment for: ${myInfo.get("first")} ${myInfo.get("last")}</p> <p>Proxy ${myInfo.get("ordinance")} on ${myInfo.get("date")} in the ${myInfo.get("location")} Temple</p>
-<p> Your phone number is: ${myInfo.get("phone")}</p>
-<p> Your email is: ${myInfo.get("email")}</p>`
- */
+function displayItems(data){
+  console.log(data);
+  data.forEach(x => {
+    console.log(x);
+    const button = document.createElement("button");
+    button.classList.add("btn-info");
+    button.type = "button";
+    button.innerHTML = `<h3>${x.title}</h3>`;
+    button.addEventListener("click", () => showStuff(x));
+    showHere.appendChild(button);
+  });
+}
+
+displayItems(membershipData);
+
+function showStuff(x) {
+  mytitle.innerHTML = `${x.name}`;
+  mydialog.showModal();
+  myinfo.innerHTML = `Dedicated ${x.dedicated} <br />
+  By: ${x.person} <br />
+  As temple number: ${x.number}`;
+}
 
 
 

@@ -108,7 +108,7 @@
 					<h3><i class="fas fa-info-circle"></i> Application Information</h3>
 					<p>
 						Please complete all required fields marked with
-						<span style="color: #e74c3c">*</span>. We'll review your application
+						<span>*</span>. We'll review your application
 						and contact you within 3 business days.
 					</p>
 				</div>
@@ -131,6 +131,7 @@
 									required
 									autocomplete="given-name"
 									title="Your first name"
+									placeholder="e.g., John"
 								/>
 							</div>
 
@@ -145,6 +146,7 @@
 									required
 									autocomplete="family-name"
 									title="Your last name"
+									placeholder="e.g., Doe"
 								/>
 							</div>
 						</div>
@@ -223,6 +225,7 @@
 									required
 									autocomplete="organization"
 									title="Your organization name"
+									placeholder="Agro AVE S.A. de C.V."
 								/>
 							</div>
 						</div>
@@ -252,9 +255,7 @@
 									<input type="radio" name="membership" value="NP" required />
 									<div>
 										<strong>NP Membership</strong>
-										<div class="membership-feature">
-											For non-profit organizations (no fee)
-										</div>
+										<div class="membership-feature">No cost membership</div>
 									</div>
 								</label>
 							</div>
@@ -288,13 +289,21 @@
 									<input type="radio" name="membership" value="Gold" />
 									<div>
 										<strong>Gold Membership</strong>
-										<div class="membership-feature">
-											Premium features and priority access
-										</div>
+										<div class="membership-feature">Premium features</div>
 									</div>
 								</label>
 							</div>
 						</div>
+						<div id="showHere"></div>
+
+						<!-- One single dialog for all temples -->
+						<dialog id="mydialog">
+							<div>
+								<h2>Sample Title</h2>
+								<button type="button">❌</button>
+							</div>
+							<p></p>
+						</dialog>
 					</div>
 
 					<input type="hidden" name="timestamp" id="timestamp" />

@@ -1,31 +1,4 @@
-/* Form Stylesheet */
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
 
-/* body {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-/* .container {
-    max-width: 800px;
-    width: 100%;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    margin: 30px 0;
-} */
 :root {
   /* Fonts */
   --title-font: "Lobster", sans-serif;
@@ -86,6 +59,10 @@
     margin-bottom: 10px;
 }
 
+.form-intro span{
+    color: var(--engineering-orange);
+}
+
 .form-section {
     margin-bottom: 25px;
     padding-bottom: 20px;
@@ -139,6 +116,7 @@ input[type="email"],
 input[type="tel"],
 select,
 textarea {
+    font-family: var(--main-font);
     width: 90%;
     padding: 12px 15px;
     border: 2px solid var(--moonstone);
@@ -147,12 +125,21 @@ textarea {
     transition: all 0.3s ease;
 }
 
+.membership-feature{
+    font-family: var(--main-font);
+}
+
 input:focus,
 select:focus,
 textarea:focus {
     border-color: var(--background);
     outline: none;
     box-shadow: 0 0 8px rgba(6, 177, 202, 0.3);
+}
+
+.info-button{
+    font-family: var(--main-font);
+
 }
 
 .radio-group {
