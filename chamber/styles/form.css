@@ -73,7 +73,7 @@
 
 .form-intro {
     background: #f0f8ff;
-    border-left: 4px solid #1e3799;
+    border-left: 4px solid var(--engineering-orange);
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 0 8px 8px 0;
