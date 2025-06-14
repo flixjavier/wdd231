@@ -1,0 +1,250 @@
+/* Form Stylesheet */
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+/* body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+/* .container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin: 30px 0;
+} */
+:root {
+  /* Fonts */
+  --title-font: "Lobster", sans-serif;
+  --h2-font: "Noto Sans", sans-serif;
+  --main-font: "Roboto", sans-serif;
+  /* Colors */
+  --black: #000000ff;
+  --van-dyke: #4F4444ff;
+  --black-2: #010000ff;
+  --engineering-orange: #D40000ff;
+  --redwood: #9B554Dff;
+  --black-3: #010000ff;
+  --moonstone: #5B9CA0ff;
+  --moonstone-2: #06B1CAff;
+}
+
+.form-header {
+    background: linear-gradient(90deg, var(--moonstone-2), var(--moonstone), var(--moonstone-2));
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 0%;
+}
+
+.form-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-container {
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
+    border: 2px solid var(--redwood);
+}
+
+.form-intro {
+    background: #f0f8ff;
+    border-left: 4px solid #1e3799;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.form-intro h3 {
+    color: #1e3799;
+    margin-bottom: 10px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+h3.section-title {
+    color: #1e3799;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3.section-title i {
+    font-size: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-group {
+    flex: 1 1 300px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+label span.required {
+    color: #e74c3c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-option {
+    flex: 1 1 150px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    border-color: #3498db;
+    background: #e3f2fd;
+}
+
+.radio-option label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.radio-option input {
+    margin-right: 10px;
+}
+
+.membership-feature {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: block;
+    margin: 30px auto 10px;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.form-note {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+    
+    .radio-option {
+        flex: 1 1 100%;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
