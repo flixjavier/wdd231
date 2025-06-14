@@ -1,21 +1,26 @@
 
 :root {
-  /* Fonts */
-  --title-font: "Lobster", sans-serif;
-  --h2-font: "Noto Sans", sans-serif;
-  --main-font: "Roboto", sans-serif;
-  /* Colors */
-  --black: #000000ff;
-  --van-dyke: #4F4444ff;
-  --black-2: #010000ff;
-  --engineering-orange: #D40000ff;
-  --redwood: #9B554Dff;
-  --black-3: #010000ff;
-  --moonstone: #5B9CA0ff;
-  --moonstone-2: #06B1CAff;
-  --background: #d5ecf5; 
+    /* Fonts */
+    --title-font: "Lobster", sans-serif;
+    --h2-font: "Noto Sans", sans-serif;
+    --main-font: "Roboto", sans-serif;
+    /* Colors */
+    --black: #000000ff;
+    --van-dyke: #4F4444ff;
+    --black-2: #010000ff;
+    --engineering-orange: #D40000ff;
+    --redwood: #9B554Dff;
+    --black-3: #010000ff;
+    --moonstone: #5B9CA0ff;
+    --moonstone-2: #06B1CAff;
+    --background: #d5ecf5; 
 }
 
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3rem #777;
+    width: 100%;
+}
 .form-header {
     background: linear-gradient(90deg, var(--moonstone-2), var(--moonstone), var(--moonstone-2));
     color: white;
@@ -210,69 +215,82 @@ textarea:focus {
     margin-top: 15px;
 }
 
+#showHere{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    margin-top: 10px;
+}
 
-/* Keyframes for continuous rotation */
+    /* Keyframes for continuous rotation */
 @keyframes rotateCircle {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes rotateCircleReverse {
-  0% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes rotateCirclePulse {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.2); }
-  100% { transform: rotate(360deg) scale(1); }
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
 @keyframes rotateCircleBounce {
-  0% { transform: rotate(0deg) translateY(0); }
-  25% { transform: rotate(90deg) translateY(-5px); }
-  50% { transform: rotate(180deg) translateY(0); }
-  75% { transform: rotate(270deg) translateY(-5px); }
-  100% { transform: rotate(360deg) translateY(0); }
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(90deg) translateY(-5px); }
+    50% { transform: rotate(180deg) translateY(0); }
+    75% { transform: rotate(270deg) translateY(-5px); }
+    100% { transform: rotate(360deg) translateY(0); }
 }
 
-/* Applicant Information icon animation */
+    /* Applicant Information icon animation */
 .form-section:nth-child(1) .section-title i {
-  animation: rotateCircle 6s infinite linear;
-  color: #1e3799;
+    animation: rotateCircle 6s infinite linear;
+    color: #1e3799;
 }
 
-/* Contact Information icon animation */
+    /* Contact Information icon animation */
 .form-section:nth-child(2) .section-title i {
-  animation: rotateCircleReverse 7s infinite linear;
-  color: #27ae60;
+    animation: rotateCircleReverse 7s infinite linear;
+    color: #27ae60;
 }
 
-/* Organization Details icon animation */
+    /* Organization Details icon animation */
 .form-section:nth-child(3) .section-title i {
-  animation: rotateCirclePulse 8s infinite ease-in-out;
-  color: #e67e22;
+    animation: rotateCirclePulse 8s infinite ease-in-out;
+    color: #e67e22;
 }
 
-/* Membership Level icon animation */
+    /* Membership Level icon animation */
 .form-section:nth-child(4) .section-title i {
-  animation: rotateCircleBounce 5s infinite ease-in-out;
-  color: #8e44ad;
+    animation: rotateCircleBounce 5s infinite ease-in-out;
+    color: #8e44ad;
 }
 
-/* Base styles for icons */
+    /* Base styles for icons */
 .section-title i {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #e3f2fd;
-  font-size: 1.2rem;
-  margin-right: 10px;
-  border: 2px solid currentColor;
-  transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e3f2fd;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    border: 2px solid currentColor;
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 600px) {

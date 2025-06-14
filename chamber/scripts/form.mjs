@@ -19,7 +19,6 @@ const membershipData = [
         benefits: [
             "All NP benefits plus:",
             "Business listing in our online directory",
-            "Access to business workshops",
             "Networking events (4 per year)",
             "Discounts on chamber events",
             "Quarterly business consultations"
@@ -32,11 +31,9 @@ const membershipData = [
         benefits: [
             "All Bronze benefits plus:",
             "Featured listing in our directory",
-            "Priority access to workshops",
             "Networking events (8 per year)",
             "Free admission to 2 annual events",
             "Business spotlight in newsletter",
-            "Access to premium resources"
         ]
     },
     {
@@ -48,9 +45,6 @@ const membershipData = [
             "Premium featured listing",
             "VIP access to all events",
             "Business mentorship program",
-            "Free advertising in newsletter",
-            "Annual business award eligibility",
-            "Exclusive networking opportunities",
             "Priority referrals from chamber"
         ]
     }
@@ -83,14 +77,16 @@ function displayItems(data){
 displayItems(membershipData);
 
 function showStuff(x) {
-    mytitle.innerHTML = `${x.name}`;
+    mytitle.innerHTML = `${x.title}`;
     mydialog.showModal();
-    myinfo.innerHTML = `Dedicated ${x.dedicated} <br />
-    By: ${x.person} <br />
-    As temple number: ${x.number}`;
- }
-
-
+    myinfo.innerHTML = `Price: ${x.price} <br />
+    Benefits: ${x.benefits[0]} <br />
+    ${x.benefits[1]} <br />
+    ${x.benefits[2]} <br />
+    ${x.benefits[3]} <br />
+    ${x.benefits[4]} <br />
+    (Level:${x.level})`;
+}
 
 // Wait for DOM to be fully loaded before executing
 document.addEventListener('DOMContentLoaded', function() {
