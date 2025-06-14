@@ -68,27 +68,27 @@ myclose.addEventListener("click", () => {
 });
 
 function displayItems(data){
-  console.log(data);
-  data.forEach(x => {
-    console.log(x);
-    const button = document.createElement("button");
-    button.classList.add("btn-info");
-    button.type = "button";
-    button.innerHTML = `<h3>${x.title}</h3>`;
-    button.addEventListener("click", () => showStuff(x));
-    showHere.appendChild(button);
-  });
+    console.log(data);
+    data.forEach(x => {
+        console.log(x);
+        const button = document.createElement("button");
+        button.classList.add("btn-info");
+        button.type = "button";
+        button.innerHTML = `<h3>${x.title}</h3>`;
+        button.addEventListener("click", () => showStuff(x));
+        showHere.appendChild(button);
+    });
 }
 
 displayItems(membershipData);
 
 function showStuff(x) {
-  mytitle.innerHTML = `${x.name}`;
-  mydialog.showModal();
-  myinfo.innerHTML = `Dedicated ${x.dedicated} <br />
-  By: ${x.person} <br />
-  As temple number: ${x.number}`;
-}
+    mytitle.innerHTML = `${x.name}`;
+    mydialog.showModal();
+    myinfo.innerHTML = `Dedicated ${x.dedicated} <br />
+    By: ${x.person} <br />
+    As temple number: ${x.number}`;
+ }
 
 
 
