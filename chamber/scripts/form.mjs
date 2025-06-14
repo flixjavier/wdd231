@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (queryString) {
         const urlParams = new URLSearchParams(queryString);
-        console.log('Form parameters:', Object.fromEntries(urlParams.entries()));
+        console.log(urlParams);
         
         // If on thank you page, display results
         const resultsElement = document.getElementById('results');
@@ -130,81 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
     }
-    
-    // Set current year and last modified in footer
-    /* const currentYear = new Date().getFullYear();
-    document.getElementById('current-year').textContent = `© ${currentYear} Casas Grandes Chamber of Commerce`;
-    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`; */
 });
-
-/*     const queryString = window.location.search;
-    console.log('Query string:', queryString);
-    
-    // Set the timestamp when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const now = new Date();
-            const timestamp = now.toISOString();
-            document.getElementById('timestamp').value = timestamp;
-        }); */
-
-/* 
-    if (queryString) {
-        const urlParams = new URLSearchParams(queryString);
-
-        const form = document.querySelector("form");
-    
-        form.addEventListener("submit", function() {
-            const timestamp = document.getElementById("timestamp").value = Date.now();
-
-        })
-
-        // If on thank you page, display results
-        const resultsElement = document.getElementById('results');
-            resultsElement.innerHTML = `
-                <p>Application submitted by: ${urlParams.get("firstname")} ${urlParams.get("lastname")}</p>
-                <p>Organization: ${urlParams.get("orgname")}</p>
-                <p>Membership Level: ${urlParams.get("membership")}</p>
-                <p>Contact phone: ${urlParams.get("phone")}</p>
-                <p>Contact email: ${urlParams.get("email")}</p>
-                <p>Submitted at: ${timestamp}</p>
-            `;
-        } */
-
-
-// Code for join.html (set timestamp before submit)
-/* if (window.location.pathname.endsWith("join.html")) {
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", function() {
-      document.getElementById("timestamp").value = Date.now();
-    });
-  }
-}
-
-// Code for thankyou.html (display results)
-if (window.location.pathname.endsWith("thankyou.html")) {
-  const queryString = window.location.search;
-  if (queryString) {
-    const urlParams = new URLSearchParams(queryString);
-    const timestamp = urlParams.get("timestamp");
-    const readableTime = timestamp ? new Date(Number(timestamp)).toLocaleString() : "N/A";
-
-    console.log("Submitted at:", readableTime);
-
-    const resultsElement = document.getElementById('results');
-    if (resultsElement) {
-      resultsElement.innerHTML = `
-        <p>Application submitted by: ${urlParams.get("firstname")} ${urlParams.get("lastname")}</p>
-        <p>Organization: ${urlParams.get("orgname")}</p>
-        <p>Membership Level: ${urlParams.get("membership")}</p>
-        <p>Contact phone: ${urlParams.get("phone")}</p>
-        <p>Contact email: ${urlParams.get("email")}</p>
-        <p>Submitted at: ${readableTime}</p>
-      `;
-    }
-  }
-} */
-
 
     // Set current year and last modified in footer
     const currentYear = new Date().getFullYear();
