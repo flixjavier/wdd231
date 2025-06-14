@@ -57,11 +57,15 @@ const myclose = document.querySelector("#mydialog button");
 const myinfo = document.querySelector("#mydialog p");
 
 //event listener for the dialog close button
-myclose.addEventListener("click", () => {
-    mydialog.close();
-});
 
-function displayItems(data){
+
+if (window.location.pathname.endsWith("join.html")) {
+  // Run your function here
+    myclose.addEventListener("click", () => {
+    mydialog.close();
+    });
+
+    function displayItems(data){
     console.log(data);
     data.forEach(x => {
         console.log(x);
@@ -71,21 +75,22 @@ function displayItems(data){
         button.innerHTML = `<h3>${x.title}</h3>`;
         button.addEventListener("click", () => showStuff(x));
         showHere.appendChild(button);
-    });
+        });
+    }
+
+    displayItems(membershipData);
+
+    function showStuff(x) {
+        mytitle.innerHTML = `${x.title}`;
+        mydialog.showModal();
+        myinfo.innerHTML = `Price: ${x.price} <br />
+        Benefits: ${x.benefits[0]} <br />
+        ${x.benefits[1]} <br />
+        ${x.benefits[2]} <br />
+        ${x.benefits[3]} <br />
+        ${x.benefits[4]} <br />
+        (Level:${x.level})`;
 }
-
-displayItems(membershipData);
-
-function showStuff(x) {
-    mytitle.innerHTML = `${x.title}`;
-    mydialog.showModal();
-    myinfo.innerHTML = `Price: ${x.price} <br />
-    Benefits: ${x.benefits[0]} <br />
-    ${x.benefits[1]} <br />
-    ${x.benefits[2]} <br />
-    ${x.benefits[3]} <br />
-    ${x.benefits[4]} <br />
-    (Level:${x.level})`;
 }
 
 // Wait for DOM to be fully loaded before executing
@@ -96,20 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only proceed if the form exists
     if (form) {
         // Set timestamp on form submission
-        form.addEventListener('submit', function(event) {
-            // Prevent default form submission for demonstration
-            // Remove this in production when using GET method
-            event.preventDefault();
-            
-            // Set timestamp value
+        form.addEventListener('submit', function() {
             document.getElementById('timestamp').value = new Date().toISOString();
-            
-            // For demonstration: show confirmation
-            alert('Form would submit with timestamp: ' + document.getElementById('timestamp').value);
-            
-            // In production, uncomment this to actually submit the form
-            // form.submit();
-        });
+    // No preventDefault, let the form submit naturally
+        });;
     } else {
         console.error('Form element not found');
     }
@@ -137,7 +132,81 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Set current year and last modified in footer
+    /* const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = `© ${currentYear} Casas Grandes Chamber of Commerce`;
+    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`; */
+});
+
+/*     const queryString = window.location.search;
+    console.log('Query string:', queryString);
+    
+    // Set the timestamp when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const timestamp = now.toISOString();
+            document.getElementById('timestamp').value = timestamp;
+        }); */
+
+/* 
+    if (queryString) {
+        const urlParams = new URLSearchParams(queryString);
+
+        const form = document.querySelector("form");
+    
+        form.addEventListener("submit", function() {
+            const timestamp = document.getElementById("timestamp").value = Date.now();
+
+        })
+
+        // If on thank you page, display results
+        const resultsElement = document.getElementById('results');
+            resultsElement.innerHTML = `
+                <p>Application submitted by: ${urlParams.get("firstname")} ${urlParams.get("lastname")}</p>
+                <p>Organization: ${urlParams.get("orgname")}</p>
+                <p>Membership Level: ${urlParams.get("membership")}</p>
+                <p>Contact phone: ${urlParams.get("phone")}</p>
+                <p>Contact email: ${urlParams.get("email")}</p>
+                <p>Submitted at: ${timestamp}</p>
+            `;
+        } */
+
+
+// Code for join.html (set timestamp before submit)
+/* if (window.location.pathname.endsWith("join.html")) {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function() {
+      document.getElementById("timestamp").value = Date.now();
+    });
+  }
+}
+
+// Code for thankyou.html (display results)
+if (window.location.pathname.endsWith("thankyou.html")) {
+  const queryString = window.location.search;
+  if (queryString) {
+    const urlParams = new URLSearchParams(queryString);
+    const timestamp = urlParams.get("timestamp");
+    const readableTime = timestamp ? new Date(Number(timestamp)).toLocaleString() : "N/A";
+
+    console.log("Submitted at:", readableTime);
+
+    const resultsElement = document.getElementById('results');
+    if (resultsElement) {
+      resultsElement.innerHTML = `
+        <p>Application submitted by: ${urlParams.get("firstname")} ${urlParams.get("lastname")}</p>
+        <p>Organization: ${urlParams.get("orgname")}</p>
+        <p>Membership Level: ${urlParams.get("membership")}</p>
+        <p>Contact phone: ${urlParams.get("phone")}</p>
+        <p>Contact email: ${urlParams.get("email")}</p>
+        <p>Submitted at: ${readableTime}</p>
+      `;
+    }
+  }
+} */
+
+
+    // Set current year and last modified in footer
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = `© ${currentYear} Casas Grandes Chamber of Commerce`;
     document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
-});
