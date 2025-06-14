@@ -12,6 +12,7 @@
   --black-3: #010000ff;
   --moonstone: #5B9CA0ff;
   --moonstone-2: #06B1CAff;
+  --background: #d5ecf5; 
 }
 
 header {
@@ -83,7 +84,7 @@ ul.menuLinks a:hover {
 
 #myButton.open::before {
   content: "\2612";
-  color: var(--redwood);
+  color: var(--background);
 }
 
 nav#animateme {
