@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" scontent="width=device-width, initial-scale=1.0" />
-		<title>Casas Grandes | Chamber Directory</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Discover | Chamber</title>
 		<meta
 			name="description"
 			content="Webpage Chamber of Commerce of Casas Grandes City. Explore the culture and the magic of this great place"
@@ -19,15 +19,18 @@
 			property="og:image"
 			content="https://flixjavier.github.io/wdd231/chamber/images/casas_grandes_letras.webp"
 		/>
-		<meta property="og:url" content="https://flixjavier.github.io/wdd231/" />
+		<meta
+			property="og:url"
+			content="https://flixjavier.github.io/wdd231/chamber/index.html"
+		/>
 		<meta
 			name="twitter:card"
-			content="https://flixjavier.github.io/wdd231/chamber/directory.html"
+			content="https://flixjavier.github.io/wdd231/chamber/index.html"
 		/>
 		<meta name="twitter:title" content="Casas Grandes | Chamber" />
 		<meta
 			name="twitter:image"
-			content="https://flixjavier.github.io/wdd231/chamber/directory.html"
+			content="https://flixjavier.github.io/wdd231/chamber/index.html"
 		/>
 		<link rel="stylesheet" href="styles/normalize.css" />
 		<link rel="stylesheet" href="styles/small.css" />
@@ -42,7 +45,6 @@
 		/>
 		<link rel="icon" href="images/casas_grandes_icon.ico" type="image/x-icon" />
 		<script src="scripts/base.mjs" type="module"></script>
-		<script src="scripts/display_cards.mjs" type="module"></script>
 	</head>
 	<body>
 		<header>
@@ -51,7 +53,7 @@
 				<h1>Casas Grandes</h1>
 				<span>Chamber of Commerce</span>
 			</div>
-			<button id="myButton"></button>
+			<button id="myButton" aria-label="Open navigation menu"></button>
 		</header>
 		<nav id="animateme">
 			<ul class="menuLinks">
@@ -62,7 +64,7 @@
 						>Home</a
 					>
 				</li>
-				<li class="current-menu-item">
+				<li>
 					<a
 						href="https://flixjavier.github.io/wdd231/chamber/directory.html"
 						title="Directory"
@@ -76,7 +78,7 @@
 						>Join</a
 					>
 				</li>
-				<li>
+				<li class="current-menu-item">
 					<a
 						href="https://flixjavier.github.io/wdd231/chamber/discover.html"
 						title="Discover"
@@ -85,13 +87,7 @@
 				</li>
 			</ul>
 		</nav>
-		<main>
-			<div class="menu">
-				<button id="grid" data-view="grid">Grid View</button>
-				<button id="list" data-view="list">List View</button>
-			</div>
-			<div id="cards" class="grid"></div>
-		</main>
+		<main></main>
 		<footer class="footer">
 			<section class="footer-info"></section>
 			<div class="social-icons"></div>
