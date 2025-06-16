@@ -1,0 +1,13 @@
+@media only screen and (min-width: 38rem) {
+  #allplaces div {
+    grid-template-areas: 
+    "name name"
+    "thephoto description"
+    "thephoto address";
+
+  }
+  #allplaces div figure img {
+    width: 300px;
+  }
+}
+

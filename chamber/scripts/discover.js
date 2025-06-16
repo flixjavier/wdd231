@@ -7,10 +7,15 @@ const showHere = document.querySelector("#allplaces");
 function displayItems(places){
   places.forEach(x => {
     const thecard = document.createElement("div");
+    const figureTag = document.createElement("figure");
     const thephoto = document.createElement("img");
     thephoto.src = `images/${x.photo}`;
     thephoto.alt = x.Name;
-    thecard.appendChild(thephoto);
+    thephoto.setAttribute("loading", "lazy");
+    thephoto.setAttribute("width", "300");
+    thephoto.setAttribute("height", "200");
+    figureTag.appendChild(thephoto);
+    thecard.appendChild(figureTag);
     const title = document.createElement("h2");
     title.innerHTML = x.Name;
     thecard.appendChild(title);
@@ -18,7 +23,7 @@ function displayItems(places){
     address.innerText = x.Address;
     thecard.appendChild(address);
     const description = document.createElement("p");
-    description.innerText = `${x.Description} Score: ${x.Score}`;
+    description.innerHTML = `${x.Description} <br>Score: ${x.Score}`;
     thecard.appendChild(description);
     showHere.appendChild(thecard);
   });

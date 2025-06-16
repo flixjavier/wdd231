@@ -15,6 +15,52 @@
   --background: #d5ecf5; 
 }
 
+*{
+  box-sizing: border-box;
+}
+
+#allplaces div {
+  margin: 1rem 8px;
+  border: 1px solid var(--van-dyke);
+  background-color: var(--background);
+  border-radius:  8px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "name"
+    "thephoto"
+    "description"
+    "address";
+  text-align: center;
+}
+
+#allplaces div h2{
+  margin: 1rem 10px;
+  grid-area: name;
+}
+
+#allplaces div figure{
+  margin: 0;
+  padding: 0;
+  grid-area: thephoto;
+}
+
+#allplaces div figure img {
+  width: 100%;
+}
+
+#allplaces div p {
+  margin: 1rem 10px;
+  grid-area: description;
+}
+
+#allplaces div address {
+  margin: 1rem 10px;
+  grid-area: address;
+}
+
 header {
   display: grid;
   grid-template-columns: 44px auto auto 44px;

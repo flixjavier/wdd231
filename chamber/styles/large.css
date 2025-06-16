@@ -1,4 +1,4 @@
-@media only screen and (min-width:38rem) {
+@media only screen and (min-width:64rem) {
   body {
     max-width: 1200px;
     min-height: 900px;
@@ -117,5 +117,23 @@
     border-radius: 50%;
     display: block;
     margin-left: auto;
+  }
+
+  #allplaces {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; /* Centers the content horizontally */
+    align-items: start; /* Aligns items to the start vertically */
+  }
+
+  #allplaces div{
+  grid-template-areas: 
+    "name name"
+    "thephoto description"
+    "thephoto address";
+  }
+
+  #allplaces div address {
+    text-align: right;
   }
 }
