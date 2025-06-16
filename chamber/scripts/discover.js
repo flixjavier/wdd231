@@ -33,3 +33,45 @@ function displayItems(places){
 }
 
 displayItems(places);
+
+// Visitor tracking functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const visitMessage = document.getElementById('visitMessage');
+            const messageContent = document.getElementById('messageContent');
+            const closeButton = document.querySelector('.visit-message .close');
+            
+            // Get current time in milliseconds
+            const currentTime = Date.now();
+            
+            // Get last visit time from localStorage
+            const lastVisit = localStorage.getItem('lastVisit');
+            
+            // Calculate days between visits
+            let daysBetween = 0;
+            if (lastVisit) {
+                daysBetween = Math.floor((currentTime - lastVisit) / (1000 * 60 * 60 * 24));
+            }
+            
+            // Create message based on visit history
+            let message;
+            if (!lastVisit) {
+                message = "Welcome! Let us know if you have any questions.";
+            } else if (daysBetween === 0) {
+                message = "Back so soon! Awesome!";
+            } else {
+                message = `You last visited ${daysBetween} ${daysBetween === 1 ? 'day' : 'days'} ago.`;
+            }
+            
+            // Display message
+            messageContent.textContent = message;
+            visitMessage.style.display = 'block';
+            
+            // Update localStorage with current visit time
+            localStorage.setItem('lastVisit', currentTime);
+            
+            // Close button functionality
+            closeButton.addEventListener('click', function() {
+                visitMessage.style.display = 'none';
+            });
+        });

@@ -166,6 +166,11 @@ main {
   border: 2px solid var(--redwood);
 }
 
+#messageContent{
+  font-family: var(--main-font);
+  font-size: 1.5rem;
+}
+
 .hero {
   position: relative;
   width: 100%;
