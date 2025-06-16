@@ -3,7 +3,8 @@
     grid-template-areas: 
     "name name"
     "thephoto description"
-    "thephoto address";
+    "thephoto address"
+    "button button";
 
   }
   #allplaces div figure img {

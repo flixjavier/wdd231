@@ -32,7 +32,8 @@
     "name"
     "thephoto"
     "description"
-    "address";
+    "address"
+    "button";
   text-align: center;
 }
 
@@ -59,6 +60,11 @@
 #allplaces div address {
   margin: 1rem 10px;
   grid-area: address;
+  font-size: 1rem;
+}
+
+#allplaces div button{
+  grid-area: button;
 }
 
 header {

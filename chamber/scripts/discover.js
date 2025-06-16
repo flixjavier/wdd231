@@ -25,6 +25,9 @@ function displayItems(places){
     const description = document.createElement("p");
     description.innerHTML = `${x.Description} <br>Score: ${x.Score}`;
     thecard.appendChild(description);
+    const button = document.createElement("button");
+    button.innerText = "Learn More";
+    thecard.appendChild(button);
     showHere.appendChild(thecard);
   });
 }
