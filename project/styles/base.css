@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@300&display=swap');
+
+@import url(variables.css);
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--heading-font), var(--paragraph-font), Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  margin: 10px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.logo-container{
+  max-width: 60px;
+  height: auto;
+  margin: 0;
+}
+
+.logo-container:hover{
+  cursor: pointer;
+}
+
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: var(--primary-color);
+  position: fixed;
+	top: 10px;
+	right: -20px;
+}
+
+#menu::before {
+	content: "☰";
+  color: var(--accent2-color);
+}
+
+#menu.open::before {
+	content: "🧅";
+  color: var(--accent3-color);
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+}
+
+.navigation a {
+	display: none;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+.navigation a:hover {
+	background-color: var(--accent2-color);
+	color: var(--secondary-color);
+	font-weight: 700;
+}
+
+.open a {
+	display: block;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+}
+
+.main div{
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  grid-column: 1/4;
+}
+
+.hero-container {
+  display: grid;
+  position: relative;
+  max-width: 800px;
+  height: auto; /* or any other desired height */
+  overflow: hidden;
+  place-items: center; /* centers items both horizontally and vertically */
+}
+
+.hero {
+  grid-area: 1 / 1 / -1 / -1; /* spans the entire grid */
+  width: 100%;
+  height: 100%;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  grid-area: 1 / 1 / -1 / -1; /* spans the entire grid */
+  opacity: 20%;
+}
+
+.hero-container h3,
+.hero-container .hero-text {
+  z-index: 1;
+  color: var(--primary-color);
+  text-align: center;
+  grid-area: 1 / 1 / -1 / -1; /* spans the entire grid */
+}
+
+.hero-container h3 {
+  margin: 0;
+}
+
+.hero-container .hero-text {
+  margin: 0;
+}
+
+.hero-text{
+  font-weight: bolder;
+}
+
+.hero-text p{
+  padding: 10px;
+}
+
+.info{
+  height: auto;
+}
+
+.info-container{
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 800px;
+  height: auto; /* or any other desired height */
+  margin: 0 auto;
+}
+
+.info-text{
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  color: var(--secondary-color);
+}
+
+.info-text h3{
+  font-family: var(--heading-font);
+  font-size: x-large;
+}
+
+.info-text p{
+  font-family: var(--paragraph-font);
+}
+
+.info-text span{
+  font-style: italic;
+}
+
+button {
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid var(--accent2-color);
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: var(--heading-font);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+span{
+  font-family: var(--paragraph-font), Arial, Helvetica, sans-serif;
+  font-variant: normal;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.social img{
+  width: 30px;
+  height: auto;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .info-container figure{
+    height: 100px;
+    margin-bottom: -10px;
+    padding-bottom: 0;
+  }
+
+  .info-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
