@@ -1,57 +1,13 @@
-const onions = [
-  {
-    onionName: "Red Onion",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/redonions.webp"
-  },
-  {
-    onionName: "Yellow Onion",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/yellowonions.webp"
-  },
-  {
-    onionName: "White Onion",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/whiteonions.webp"
-  },
-  {
-    onionName: "Market Onions",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/marketonions.webp"
-  },
-  {
-    onionName: "Onion Plant",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/onionplant.webp"
-  },
-  {
-    onionName: "Yellow and Red Onions",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2024, june, 10",
-    siembra: "2024, january, 10",
-    imageSCR:
-    "images/yellowRedOnions.webp"
-  },
-];
+import { apiFetch } from "./api.js";
+import { onions } from "./data.js";
 
 //Hamburger menu
 const hamButton = document.querySelector('#menu');
 const navigation = document.querySelector('.navigation');
+
+console.log(onions);
+
+
 
 hamButton.addEventListener('click', () => {
 	navigation.classList.toggle('open');
@@ -75,6 +31,32 @@ contact.addEventListener("click", () => {contactUsTemplate()});
 
 const onionLink = document.querySelector(".onions");
 onionLink.addEventListener("click", () => {onionsCardsTemplate(onions)});
+
+// Select all nav links
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    // Remove 'active' from all links
+    navLinks.forEach(l => l.classList.remove('active'));
+    // Add 'active' to the clicked link
+    this.classList.add('active');
+    // Optionally: prevent default and render your page here
+    // event.preventDefault();
+    // renderPage(this.getAttribute('href'));
+  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash || '#home';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === hash) {
+      link.classList.add('active');
+    }
+  });
+});
+
+
 
 //create Home page
 function homeTemplate() {
@@ -121,20 +103,27 @@ function contactUsTemplate() {
   <form onsubmit="submitForm(event)" method="get" class="form">
     <label for="fname">Nombre:</label>
     <input id="fname" type="text" name="firstname" placeholder="Nombre" required>
+
     <label for="lname">Apellidos:</label>
     <input id="lname" type="text" name="lastname" placeholder="Apellidos" required>
+
     <label for="email">Email:</label>
     <input id="email" type="email" name="email" placeholder="someone@gmail.com" required>
+
     <label for="phone">Número Teléfono:</label>
     <input id="phone" type="tel" name="phone" placeholder="6141755234" required>
+
     <label for="textarea">Mensaje:</label>
-    <textarea id="textarea" name="contact" placeholder="Escribe to mensaje aqui..." required></textarea>
-    <input type="submit" value="Enviar Mensaje">
+    <textarea id="textarea" name="contact" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+    <button type="submit" value="Submit">Click Me!</button>
   </form>
   `;
 
   template.appendChild(contactTemplate);
 }
+
+window.contactUsTemplate = contactUsTemplate;
 
 function submitForm(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -183,3 +172,50 @@ function onionsCardsTemplate(array) {
 };
 
 homeTemplate();
+apiFetch();
+
+// use the date object
+const today = new Date();
+
+const options = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false // 24-hour format
+};
+
+const formattedDate = new Intl.DateTimeFormat('en-US', options).format(today);
+
+const year = document.querySelector("#current-year");
+
+const lastModified = document.querySelector("#lastModified");
+
+const footerInfo = document.querySelector(".footer-info");
+
+const socialIcons = document.querySelector(".social-icons");
+
+footerInfo.innerHTML = `<address>
+					<strong>Casas Grandes Chamber of Commerce</strong><br />
+					123 Main Street<br />
+					Casas Grandes, CHH 12345<br />
+					info@casasgrandescc.org<br />
+					(636) 555-2300
+				</address>`
+
+socialIcons.innerHTML = `<img src="images/youtube.svg" alt="YouTube" /><img src="images/X_twitter.svg" alt="Twitter" /><img src="images/linkedin.svg" alt="LinkedIn" />`
+	
+
+year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Class Project |
+				Felix Flores<br /> Casas Grandes Chamber of Commerce<br /></span> <img
+				src="images/logo.svg"
+				alt="Company logo"
+				class="flag"
+				width="50"
+				height="50"
+			/>`;
+      /* can add loading="Lazy" */
+
+lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 

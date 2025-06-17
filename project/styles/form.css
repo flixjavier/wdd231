@@ -41,7 +41,7 @@ textarea{
   margin-bottom: 20px;
 }
 
-input[type="submit"]{
+/* button[type="submit"]{
   width: fit-content;
   min-width: 100px;
   height: 45px;
@@ -57,15 +57,15 @@ input[type="submit"]{
   font-family: var(--heading-font);
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   box-shadow: 0px 0px 20px -18px;
 }
 
-input[type="submit"]:active {
+button[type="submit"]:active {
   transform: scale(0.95);
-}
+} */
 
 label span{
   color: var(--secondary-color);
@@ -81,4 +81,81 @@ input:required:invalid{
 textarea:required:valid,
 input:required:valid{
   border-bottom: solid 8px green;
+}
+
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 var(--accent1-color); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(249, 186, 34, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 186, 34, 0); }
+}
+
+@keyframes colorPulse {
+  0% { background-color: var(--accent1-color); }
+  50% { background-color: var(--primary-color); } /* Color intermedio */
+  100% { background-color: var(--accent1-color); }
+}
+
+button[type="submit"] {
+  animation: colorPulse 2.5s infinite;
+  padding: 12px 24px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: larger;
+  font-weight:bold;
+}
+
+/* Inputs with smooth border color transition */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  font-family: var(--paragraph-font);
+  border: 2px solid var(--accent3-color);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* On focus or hover */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  border-color: var(--accent4-color);
+  outline: none;
+  transform: scale(1.1);
+}
+
+/* details and buy button */
+
+/* button.btn.outline {
+  font-family: var(--paragraph-font);
+  border: 2px solid var(--accent3-color);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+} */
+
+/* Placeholder styling (optional for consistency) */
+::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive refinement (optional, if needed) */
+@media (max-width: 500px) {
+  form {
+    padding: 1rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+  }
 }

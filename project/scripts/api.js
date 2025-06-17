@@ -11,8 +11,8 @@ const myGraphic = document.querySelector('#graphic');
 const myForecast = document.querySelector('#forecast');
 
 const myAPI = "98d437cc58adb55ddd0c72032f24b9ac"; //OpenWeatherMap API key
-const myLat = "30.374071730603774"; // Latitude for the location
-const myLon = "-107.95511200001594"; // Longitude for the location
+const myLat = "27.597250470579866"; // Latitude for the location
+const myLon = "-105.01486898964178"; // Longitude for the location
 const myUnits = "metric"; // Units for temperature (metric, imperial, or standard)
 
 //call whether API
@@ -31,9 +31,9 @@ async function apiFetch(){
       const data = await response.json();
       const forecastData = await forecastResponse.json();
       console.log(forecastData);
-      console.log(data); 
+      console.log(data);
 
-    //console.log("Hello from the Weather API");
+      console.log("Hello from the Weather API");
       displayResults(data);
       displayForecast(forecastData);
     }
@@ -76,7 +76,7 @@ function displayForecast(data) {
 
 
 function displayResults(data) {
-  //console.log(data);
+  console.log(data);
   myTown.innerHTML = data.name;
   myDescription.innerHTML = data.weather[0].description;
   myTemperature.innerHTML = `<strong> Temp: ${data.main.temp.toFixed(1)} &deg;C</strong>`; 
