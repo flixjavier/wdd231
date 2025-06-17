@@ -101,20 +101,20 @@ function contactUsTemplate() {
 		
   contactTemplate.innerHTML = `
   <form onsubmit="submitForm(event)" method="get" class="form">
-    <label for="fname">Nombre:</label>
-    <input id="fname" type="text" name="firstname" placeholder="Nombre" required>
+    <label for="fname">First Name:</label>
+    <input id="fname" type="text" name="firstname" placeholder="John" required>
 
-    <label for="lname">Apellidos:</label>
-    <input id="lname" type="text" name="lastname" placeholder="Apellidos" required>
+    <label for="lname">Last Name:</label>
+    <input id="lname" type="text" name="lastname" placeholder="Doe" required>
 
     <label for="email">Email:</label>
-    <input id="email" type="email" name="email" placeholder="someone@gmail.com" required>
+    <input id="email" type="email" name="email" placeholder="johndoe@gmail.com" required>
 
-    <label for="phone">Número Teléfono:</label>
+    <label for="phone">Phone Number:</label>
     <input id="phone" type="tel" name="phone" placeholder="6141755234" required>
 
-    <label for="textarea">Mensaje:</label>
-    <textarea id="textarea" name="contact" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    <label for="textarea">Message:</label>
+    <textarea id="textarea" name="contact" placeholder="Write your message here" required></textarea>
 
     <button type="submit" value="Submit">Click Me!</button>
   </form>
@@ -160,8 +160,8 @@ function onionsCardsTemplate(array) {
         <div class="banner-image"> </div>
         <figure><img src="${onion.imageSCR}" alt="${onion.onionName}"  loading="lazy" width="300" height="auto"><figure>
         <h1>${onion.onionName}</h1>
-        <p>Corte: ${onion.corte}<br/>
-          Siembra: ${onion.siembra}</p>
+        <p>Harvest date: ${onion.corte}<br/>
+          Planting date: ${onion.siembra}</p>
       </div>
       <div class="button-wrapper"> 
         <button class="btn outline">DETAILS</button>

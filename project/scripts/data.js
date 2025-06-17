@@ -40,19 +40,11 @@ export const onions = [
     details: "Live onion plants ready for transplanting or educational agricultural use."
   },
   {
-    onionName: "Yellow and Red Onions",
-    location: "Rancho Nicaragua, Camargo, Chihuahua",
-    corte: "2025, June, 18",
-    siembra: "2025, January, 6",
-    imageSCR: "images/yellowRedOnions.webp",
-    details: "A colorful duo pack offering both sharp yellow and sweet red onions."
-  },
-  {
     onionName: "Dried Onion Flakes",
     location: "Processing Plant, Camargo, Chihuahua",
     corte: "2025, June, 25",
     siembra: "2025, January, 12",
-    imageSCR: "images/driedonionflakes.webp",
+    imageSCR: "images/driedonion.webp",
     details: "Dehydrated onion flakes for long-term storage, seasoning, and commercial food prep."
   },
   {
@@ -84,7 +76,7 @@ export const onions = [
     location: "Packaging Facility, Camargo, Chihuahua",
     corte: "2025, June, 30",
     siembra: "2025, January, 10",
-    imageSCR: "images/onionbraid.webp",
+    imageSCR: "images/onionbraids.webp",
     details: "Traditional onion braids used for storage, decoration, and easy kitchen access."
   },
   {
@@ -92,7 +84,7 @@ export const onions = [
     location: "Rancho Los Pinos, Meoqui, Chihuahua",
     corte: "2025, July, 5",
     siembra: "2025, February, 10",
-    imageSCR: "images/pearlonion.webp",
+    imageSCR: "images/pearlonions.webp",
     details: "Small, tender onions perfect for pickling and gourmet dishes."
   },
   {
@@ -100,7 +92,7 @@ export const onions = [
     location: "Huerto Orgánico El Mirador, Camargo",
     corte: "2025, June, 22",
     siembra: "2025, January, 7",
-    imageSCR: "images/organicredonion.webp",
+    imageSCR: "images/organicredonions.webp",
     details: "Certified organic red onions grown without synthetic pesticides or fertilizers."
   },
   {
@@ -116,23 +108,15 @@ export const onions = [
     location: "Local Market, Camargo, Chihuahua",
     corte: "2025, July, 15",
     siembra: "N/A (Processed Product)",
-    imageSCR: "images/pickledonion.webp",
+    imageSCR: "images/pickledredonion.webp",
     details: "Tangy pickled onions in vinegar, ideal as toppings for tacos, burgers, and salads."
-  },
-  {
-    onionName: "Onion Chutney",
-    location: "Gourmet Kitchen, Camargo, Chihuahua",
-    corte: "2025, July, 20",
-    siembra: "N/A (Processed Product)",
-    imageSCR: "images/onionchutney.webp",
-    details: "Sweet and spicy onion chutney crafted for charcuterie boards and grilled meats."
   },
   {
     onionName: "Spring Onion",
     location: "Rancho San Rafael, Camargo",
     corte: "2025, May, 30",
     siembra: "2025, March, 5",
-    imageSCR: "images/springonion.webp",
+    imageSCR: "images/springonions.webp",
     details: "Young onions harvested early with a fresh, mild taste and tender greens."
   },
   {
@@ -148,7 +132,7 @@ export const onions = [
     location: "Ready-To-Eat Foods, Camargo",
     corte: "2025, July, 22",
     siembra: "N/A (Processed Product)",
-    imageSCR: "images/grilledonionpack.webp",
+    imageSCR: "images/grillonions.webp",
     details: "Pre-cooked grilled onions, ready to reheat for burgers, hot dogs, or fajitas."
   },
   {
