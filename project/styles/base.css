@@ -364,8 +364,6 @@ button[type="button"] {
   animation: pulse 2.5s infinite;
 }
 
-
-
 @media (max-width: 600px) {
   .info-container figure{
     height: 100px;
