@@ -311,6 +311,37 @@ img{
   height: auto;
 }
 
+dialog.onion-modal {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+dialog.onion-modal p{
+  font-size: 1rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+::backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;

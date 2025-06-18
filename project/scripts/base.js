@@ -144,7 +144,7 @@ function submitForm(event) {
   }, 1000); // Adjust the delay as needed
 } 
 
-function onionsCardsTemplate(array) {
+/* function onionsCardsTemplate(array) {
   document.querySelector(".main").innerHTML = "";
 	const cardsTemplate = document.querySelector(".main"); 
 
@@ -164,10 +164,81 @@ function onionsCardsTemplate(array) {
       <div class="button-wrapper"> 
         <button class="btn outline">DETAILS</button>
         <button class="btn fill">BUY NOW</button>
-      </div>`;
+      </div>
+      <!-- One single dialog for all temples -->
+			<dialog id="mydialog">
+				<div>
+					<h2></h2>
+					<button >X</button>
+				</div>
+				<p></p>
+			</dialog>`;
     cardsTemplate.appendChild(cardTemplate);
   });
-};
+}; */
+
+function onionsCardsTemplate(array) {
+  document.querySelector(".main").innerHTML = "";
+  const cardsTemplate = document.querySelector(".main");
+
+  array.forEach((onion, index) => {
+    const cardTemplate = document.createElement("div");
+    cardTemplate.className = "card-template";
+
+    cardTemplate.innerHTML = `
+      <div class="wrapper">
+        <div class="banner-image"></div>
+        <figure><img src="${onion.imageSCR}" alt="${onion.onionName}" loading="lazy" width="300" height="auto"></figure>
+        <h2>${onion.onionName}</h2>
+        <h3>${onion.location}</h3>
+        <p>Harvest date: ${onion.corte}<br/>
+          Planting date: ${onion.siembra}</p>
+      </div>
+      <div class="button-wrapper">
+        <button class="btn outline details-btn">DETAILS</button>
+        <button class="btn fill">BUY NOW</button>
+      </div>
+      <dialog class="onion-modal">
+        <div class="modal-header">
+          <h2>${onion.onionName}</h2>
+          <button class="close-btn">X</button>
+        </div>
+        <p>${onion.details}</p>
+      </dialog>
+    `;
+
+    // Add functionality after injecting the HTML
+    const detailsBtn = cardTemplate.querySelector(".details-btn");
+    const modal = cardTemplate.querySelector(".onion-modal");
+    const closeBtn = cardTemplate.querySelector(".close-btn");
+
+    detailsBtn.addEventListener("click", () => {
+      modal.showModal();
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.close();
+    });
+
+    // Optional: close modal when clicking outside the modal content
+    modal.addEventListener("click", (e) => {
+      const dialogDimensions = modal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        modal.close();
+      }
+    });
+
+    cardsTemplate.appendChild(cardTemplate);
+  });
+}
+
+
+
 
 // use the date object
 const today = new Date();
