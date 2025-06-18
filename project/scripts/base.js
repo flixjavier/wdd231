@@ -69,7 +69,7 @@ function homeTemplate() {
     <figure class="hero"><img src="images/marketonions.webp" alt="Market Onions"  loading="lazy"> </figure>
     <div class="hero-text">
       <h3>AGROAVE Mexican Onions</h3>
-      <p class="hero-text">From México 🇲🇽 to the World 🌎</p>
+      <p>From México 🇲🇽 to the World 🌎</p>
     </div>
   </div>
   <section class="info">
@@ -143,39 +143,6 @@ function submitForm(event) {
       window.location.href = 'thanks.html';
   }, 1000); // Adjust the delay as needed
 } 
-
-/* function onionsCardsTemplate(array) {
-  document.querySelector(".main").innerHTML = "";
-	const cardsTemplate = document.querySelector(".main"); 
-
-  array.forEach(onion => {
-    const cardTemplate = document.createElement("div");
-    cardTemplate.className = "card-template";
-
-    cardTemplate.innerHTML = `
-      <div class="wrapper">
-        <div class="banner-image"> </div>
-        <figure><img src="${onion.imageSCR}" alt="${onion.onionName}"  loading="lazy" width="300" height="auto"><figure>
-        <h2>${onion.onionName}</h2>
-        <h3>${onion.location}</h3>
-        <p>Harvest date: ${onion.corte}<br/>
-          Planting date: ${onion.siembra}</p>
-      </div>
-      <div class="button-wrapper"> 
-        <button class="btn outline">DETAILS</button>
-        <button class="btn fill">BUY NOW</button>
-      </div>
-      <!-- One single dialog for all temples -->
-			<dialog id="mydialog">
-				<div>
-					<h2></h2>
-					<button >X</button>
-				</div>
-				<p></p>
-			</dialog>`;
-    cardsTemplate.appendChild(cardTemplate);
-  });
-}; */
 
 function onionsCardsTemplate(array) {
   document.querySelector(".main").innerHTML = "";
