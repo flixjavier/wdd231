@@ -57,7 +57,6 @@ input:required:valid{
   border-bottom: solid 8px green;
 }
 
-
 /* Animations */
 @keyframes pulse {
   0% { transform: scale(1); box-shadow: 0 0 0 0 var(--accent1-color); }

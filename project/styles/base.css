@@ -13,6 +13,82 @@ html, body {
   box-sizing: border-box;
 }
 
+.api {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background: #f5faff;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  justify-content: space-around;
+}
+
+.panel {
+  flex: 1fr 1fr;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1.3rem;
+}
+
+.card.panel h3,
+.weather-forecast h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: #003366;
+}
+
+.card.panel img {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.1));
+  border: none;
+}
+
+.panel p {
+  margin: 0;
+  line-height: 1.2;
+  color: #444;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* ⬅️ This vertically centers items */
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; /* ⬅️ Even vertical spacing */
+  height: 100%; /* Make sure it stretches */
+  min-height: 120px; /* Optional: avoid collapsing */
+  padding: 0;
+  margin: 0;
+}
+
+.weather-main h3, .weather-forecast h3{
+  margin: 0;
+}
+
+
+
 .nav-link.active {
   color: #fff;
   background: var(--primary-color);
