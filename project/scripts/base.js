@@ -95,7 +95,7 @@ function contactUsTemplate() {
 	const template = document.querySelector(".main"); 
 
   const contactTemplate = document.createElement("div"); 
-	contactTemplate.className = "template";
+	contactTemplate.className = "form-template";
 		
   contactTemplate.innerHTML = `
   <form onsubmit="submitForm(event)" method="get" class="form">
@@ -156,7 +156,8 @@ function onionsCardsTemplate(array) {
       <div class="wrapper">
         <div class="banner-image"> </div>
         <figure><img src="${onion.imageSCR}" alt="${onion.onionName}"  loading="lazy" width="300" height="auto"><figure>
-        <h1>${onion.onionName}</h1>
+        <h2>${onion.onionName}</h2>
+        <h3>${onion.location}</h3>
         <p>Harvest date: ${onion.corte}<br/>
           Planting date: ${onion.siembra}</p>
       </div>
