@@ -30,10 +30,10 @@ async function apiFetch(){
     else if (response.ok) {
       const data = await response.json();
       const forecastData = await forecastResponse.json();
-      console.log(forecastData);
-      console.log(data);
+      //console.log(forecastData);
+      //console.log(data);
 
-      console.log("Hello from the Weather API");
+      //console.log("Hello from the Weather API");
       displayResults(data);
       displayForecast(forecastData);
     }
@@ -65,7 +65,7 @@ const [todayName, tomorrowName, dayAfterName] = getDayNames();
 
 // Display the day names
 function displayForecast(data) {
-  console.log(data);
+  //console.log(data);
   const [todayName, tomorrowName, dayAfterName] = getDayNames();
   myForecast.innerHTML = `
     ${todayName}: <strong>${data.list[0].main.temp.toFixed(1)} &deg;C</strong><br />
@@ -76,7 +76,7 @@ function displayForecast(data) {
 
 
 function displayResults(data) {
-  console.log(data);
+  //console.log(data);
   myTown.innerHTML = data.name;
   myDescription.innerHTML = data.weather[0].description;
   myTemperature.innerHTML = `<strong> Temp: ${data.main.temp.toFixed(1)} &deg;C</strong>`; 

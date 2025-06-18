@@ -1,13 +1,13 @@
 import { apiFetch } from "./api.js";
 import { onions } from "./data.js";
 
+window.contactUsTemplate = contactUsTemplate; //Global
+
+window.submitForm = submitForm; //Global
+
 //Hamburger menu
 const hamButton = document.querySelector('#menu');
 const navigation = document.querySelector('.navigation');
-
-console.log(onions);
-
-
 
 hamButton.addEventListener('click', () => {
 	navigation.classList.toggle('open');
@@ -55,8 +55,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
 
 //create Home page
 function homeTemplate() {
@@ -116,14 +114,11 @@ function contactUsTemplate() {
     <label for="textarea">Message:</label>
     <textarea id="textarea" name="contact" placeholder="Write your message here" required></textarea>
 
-    <button type="submit" value="Submit">Click Me!</button>
+    <input type="submit" value="Click Me!">
   </form>
-  `;
-
+  `; 
   template.appendChild(contactTemplate);
 }
-
-window.contactUsTemplate = contactUsTemplate;
 
 function submitForm(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -135,6 +130,8 @@ function submitForm(event) {
   const phone = document.getElementById('phone').value;
   const message = document.getElementById('textarea').value;
 
+  console.log("Hello from Form");
+
   // Construct the mailto URL
   const mailtoUrl = `mailto:aveproducto77@hotmail.com?subject=Mensaje Enviado&body=Nombre: ${encodeURIComponent(fname)} ${encodeURIComponent(lname)}%0ATeléfono: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AMensaje: ${encodeURIComponent(message)}`;
 
@@ -145,7 +142,7 @@ function submitForm(event) {
   setTimeout(() => {
       window.location.href = 'thanks.html';
   }, 1000); // Adjust the delay as needed
-}
+} 
 
 function onionsCardsTemplate(array) {
   document.querySelector(".main").innerHTML = "";
@@ -171,9 +168,6 @@ function onionsCardsTemplate(array) {
   });
 };
 
-homeTemplate();
-apiFetch();
-
 // use the date object
 const today = new Date();
 
@@ -198,20 +192,32 @@ const footerInfo = document.querySelector(".footer-info");
 const socialIcons = document.querySelector(".social-icons");
 
 footerInfo.innerHTML = `<address>
-					<strong>Casas Grandes Chamber of Commerce</strong><br />
-					123 Main Street<br />
-					Casas Grandes, CHH 12345<br />
-					info@casasgrandescc.org<br />
-					(636) 555-2300
+					<strong>AGROAVE Mexico</strong><br />
+					Rancho Nicaragua<br />
+					Camargo, Chihuahua<br />
+					aveprodcutos77@gmail.com<br />
+					(614-175-5234)
 				</address>`
 
-socialIcons.innerHTML = `<img src="images/youtube.svg" alt="YouTube" /><img src="images/X_twitter.svg" alt="Twitter" /><img src="images/linkedin.svg" alt="LinkedIn" />`
+socialIcons.innerHTML = `<img src="images/instagram_logo.svg" alt="Instagram" id="instagram"/><img src="images/linkedin_logo.svg" alt="LinkedIn Logo" id="linkedin"/><img src="images/github_logo.svg" alt="GitHub Logo" id="github" />`
+
+document.getElementById('instagram').addEventListener('click', function() {
+  window.open('https://www.instagram.com/flixjavier/', '_blank');
+});
+
+document.getElementById('linkedin').addEventListener('click', function() {
+  window.open('https://www.linkedin.com/in/felixjflores-zamarripa/');
+});
+
+document.getElementById('github').addEventListener('click', function() {
+  window.open('https://github.com/flixjavier', '_blank');
+});
 	
 
 year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Class Project |
-				Felix Flores<br /> Casas Grandes Chamber of Commerce<br /></span> <img
-				src="images/logo.svg"
-				alt="Company logo"
+				Felix Flores<br /> Camargo, Chihuahua<br /></span> <img
+				src="images/onion.webp"
+				alt="onion image"
 				class="flag"
 				width="50"
 				height="50"
@@ -219,3 +225,6 @@ year.innerHTML = `<span class="highlight">&copy${today.getFullYear()} WDD231 Cla
       /* can add loading="Lazy" */
 
 lastModified.innerHTML = `<span class="highlight">Last modification: ${formattedDate}</span>`; 
+
+apiFetch();
+homeTemplate();

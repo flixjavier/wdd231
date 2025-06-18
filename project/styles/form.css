@@ -70,7 +70,7 @@ input:required:valid{
   100% { background-color: var(--accent1-color); }
 }
 
-button[type="submit"] {
+input[type="submit"] {
   animation: colorPulse 2.5s infinite;
   padding: 12px 24px;
   border: none;
@@ -127,7 +127,7 @@ textarea:focus {
     padding: 1rem;
   }
 
-  button[type="submit"] {
+  input[type="submit"] {
     width: 100%;
     font-size: 1rem;
   }

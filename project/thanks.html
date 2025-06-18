@@ -9,11 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="styles/base-large.css" />
 		<title>AGROAVE | Mexican 🇲🇽 Onions 🧅</title>
 		<script src="scripts/thanks.js" defer></script>
+		<script src="scripts/base.mjs" type="module" defer></script>
 	</head>
 	<body>
 		<header>
 			<figure class="logo-container">
-				<img src="images/agroave_logo.png" alt="company logo" loading="lazy" />
+				<img src="images/agroave_logo.webp" alt="company logo" loading="lazy" />
 			</figure>
 			<button id="menu"></button>
 			<nav class="navigation">
@@ -30,25 +31,12 @@
 			</div>
 		</main>
 		<footer>
-			<p>&copy; <span id="current-year"></span> 🌎 Félix Flores 🌏 🇲🇽 México</p>
-			<p id="lastModified"></p>
-			<figure class="social">
-				<img
-					src="images/instagram_logo.svg"
-					alt="instagram logo"
-					loading="lazy"
-				/>
-			</figure>
-			<figure class="social">
-				<img
-					src="images/linkedin_logo.svg"
-					alt="linkedIn logo"
-					loading="lazy"
-				/>
-			</figure>
-			<figure class="social">
-				<img src="images/github_logo.svg" alt="Github logo" loading="lazy" />
-			</figure>
+			<section class="footer-info"></section>
+			<div class="social-icons"></div>
+			<div class="footer-right">
+				<p id="current-year"></p>
+				<p id="lastModified"></p>
+			</div>
 		</footer>
 	</body>
 </html>
