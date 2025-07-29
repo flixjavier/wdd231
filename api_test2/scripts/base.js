@@ -5,7 +5,7 @@ const myDescription = document.querySelector('#description');
 const myTemperature = document.querySelector('#temperature');
 const myGraphic = document.querySelector('#graphic');
 
-const myAPI = "98d437cc58adb55ddd0c72032f24b9ac"; //OpenWeatherMap API key
+const myAPI = ""; //OpenWeatherMap API key
 const myLat = "27.67678782675957"; // Latitude for the location
 const myLon = "-105.16476075040424"; // Longitude for the location
 const myUnits = "metric"; // Units for temperature (metric, imperial, or standard)
