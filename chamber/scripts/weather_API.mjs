@@ -10,7 +10,7 @@ const myGraphic = document.querySelector('#graphic');
 
 const myForecast = document.querySelector('#forecast');
 
-const myAPI = "98d437cc58adb55ddd0c72032f24b9ac"; //OpenWeatherMap API key
+const myAPI = ""; //OpenWeatherMap API key
 const myLat = "30.374071730603774"; // Latitude for the location
 const myLon = "-107.95511200001594"; // Longitude for the location
 const myUnits = "metric"; // Units for temperature (metric, imperial, or standard)
