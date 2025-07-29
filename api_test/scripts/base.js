@@ -2,7 +2,7 @@ const currentTemp = document.querySelector('#current-temp');
 const weatherIcon = document.querySelector('#weather-icon');
 const captionDesc = document.querySelector('figcaption');
 
-const myAPI = "98d437cc58adb55ddd0c72032f24b9ac"; // OpenWeatherMap API key
+const myAPI = ""; // OpenWeatherMap API key
 const myLat = "49.750796987559916"; // Latitude for the location
 const myLon = "6.634350794321664"; // Longitude for the location
 const myUnits = "metric"; // Units for temperature (metric, imperial, or standard)
